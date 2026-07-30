@@ -1,19 +1,19 @@
-# CSS Glitch-Flicker Progress Bar for Creative Portfolio Layouts
+# CSS Glitch-Flicker Progress Bar for Responsive Dashboard Layouts
 
-A modern **Creative Portfolio Progress Bar** built entirely with **HTML5 and CSS3**. This showcase demonstrates futuristic **Glitch-Flicker** progress bars with neon gradients, glassmorphism styling, responsive layouts, and accessibility support without requiring JavaScript.
+A futuristic **Glitch-Flicker Progress Bar** built completely with **HTML5 and CSS3**. This showcase provides an animated dashboard-style progress component featuring digital glitch effects, flickering highlights, smooth transitions, and responsive behaviour without using JavaScript.
 
 ---
 
 ## ✨ Features
 
-- 🎨 Creative portfolio progress bars
-- ⚡ Glitch-Flicker animation
-- 🌈 Neon gradient progress fill
-- 💎 Glassmorphism skill cards
-- 📊 Skill percentage indicators
-- 📱 Fully responsive
-- ⚡ Pure HTML5 & CSS3
+- ⚡ Glitch flicker animation
+- 🌈 Animated gradient progress fill
+- 🔥 Digital sweep effect
+- 💎 Glassmorphism dashboard cards
+- 📊 Multiple progress indicators
 - 🎯 CSS Custom Properties
+- 📱 Fully responsive layout
+- 🧩 Pure HTML5 & CSS3
 - ♿ `prefers-reduced-motion` support
 - 🚫 No JavaScript required
 
@@ -23,6 +23,7 @@ A modern **Creative Portfolio Progress Bar** built entirely with **HTML5 and CSS
 
 ```
 creative-glitch-flicker-progress-bar/
+
 ├── demo.html
 ├── style.css
 └── README.md
@@ -33,24 +34,34 @@ creative-glitch-flicker-progress-bar/
 ## 🚀 Getting Started
 
 1. Open `demo.html` in any modern browser.
-2. View the animated portfolio skill progress bars.
-3. Experience the glitch-flicker effects and neon styling.
-4. Customize colors, widths, and animation timing using CSS variables.
+2. View the animated dashboard progress bars.
+3. Customize colors and animation speed using CSS variables.
 
 ---
 
 ## 🎨 CSS Custom Properties
 
 ```css
-:root{
-    --bg:#050816;
-    --surface:rgba(17,24,39,.88);
-    --primary:#00e5ff;
-    --secondary:#ff00c8;
+:root {
+
+    --bg:#020617;
+
+    --surface:rgba(255,255,255,.08);
+
+    --primary:#22d3ee;
+
+    --secondary:#a855f7;
+
+    --accent:#ef4444;
+
     --text:#ffffff;
+
     --muted:#cbd5e1;
-    --border:rgba(255,255,255,.08);
-    --radius:20px;
+
+    --border:rgba(255,255,255,.15);
+
+    --radius:22px;
+
 }
 ```
 
@@ -58,13 +69,14 @@ creative-glitch-flicker-progress-bar/
 
 ## 🎬 Animation Overview
 
-This example demonstrates:
+This component demonstrates:
 
-- Glitch-Flicker Animation
-- Animated Scanline Effect
-- Neon Glow Progress Fill
-- Glassmorphism Cards
-- Smooth Hover Elevation
+- Progress loading animation
+- Glitch flicker movement
+- Shimmer sweep highlight
+- Gradient transitions
+- Floating dashboard cards
+- Smooth hover effects
 
 ---
 
@@ -77,21 +89,25 @@ Optimized for:
 - 📱 Tablet
 - 📲 Mobile
 
-Responsive media queries automatically adjust:
+Responsive behaviour includes:
 
-- Card spacing
-- Typography
-- Progress bar sizing
-- Layout spacing
+- Flexible dashboard layout
+- Adaptive spacing
+- Mobile-friendly typography
+- Scalable progress components
 
 ---
 
 ## ♿ Accessibility
 
-- Semantic HTML5
-- High-contrast interface
-- Responsive typography
-- `prefers-reduced-motion` support
+Includes:
+
+- Semantic HTML structure
+- Clear visual indicators
+- Reduced motion support
+- `prefers-reduced-motion` media query
+
+Users who prefer reduced animations will automatically receive a simplified experience.
 
 ---
 
@@ -100,8 +116,9 @@ Responsive media queries automatically adjust:
 - HTML5
 - CSS3
 - CSS Variables
-- CSS Grid
-- CSS Keyframe Animations
+- CSS Flexbox
+- CSS Animations
+- CSS Keyframes
 - CSS Transforms
 - Responsive Media Queries
 
@@ -109,4 +126,4 @@ Responsive media queries automatically adjust:
 
 ## 📄 License
 
-Created as part of the **EaseMotion CSS** showcase examples and follows the repository contribution guidelines.
+Created as part of the **EaseMotion CSS** showcase examples and follows repository contribution guidelines.
