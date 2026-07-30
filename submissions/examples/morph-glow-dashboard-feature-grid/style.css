@@ -1,0 +1,646 @@
+/* ==========================
+   CSS Morph-Glow Feature Grid
+   EaseMotion CSS
+========================== */
+
+
+/* ==========================
+   CSS Variables
+========================== */
+
+:root {
+
+    --bg:#020617;
+
+    --surface:rgba(255,255,255,.08);
+
+    --primary:#8b5cf6;
+
+    --secondary:#06b6d4;
+
+    --accent:#ec4899;
+
+    --text:#ffffff;
+
+    --muted:#cbd5e1;
+
+    --border:rgba(255,255,255,.15);
+
+    --radius:24px;
+
+}
+
+
+
+/* ==========================
+   Reset
+========================== */
+
+* {
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+
+body {
+
+    min-height:100vh;
+
+
+    padding:40px 20px;
+
+
+    font-family:
+
+        Inter,
+
+        Arial,
+
+        sans-serif;
+
+
+    color:var(--text);
+
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #020617,
+
+            #312e81
+
+        );
+
+}
+
+
+
+/* ==========================
+   Container
+========================== */
+
+.container {
+
+    width:min(1100px,100%);
+
+    margin:auto;
+
+}
+
+
+
+/* ==========================
+   Hero Section
+========================== */
+
+.hero {
+
+    text-align:center;
+
+
+    margin-bottom:50px;
+
+
+    animation:
+
+        fadeIn .8s ease;
+
+}
+
+
+
+.badge {
+
+    display:inline-block;
+
+
+    padding:8px 18px;
+
+
+    margin-bottom:20px;
+
+
+    border-radius:50px;
+
+
+    background:
+
+        rgba(139,92,246,.18);
+
+
+    border:
+
+        1px solid var(--border);
+
+
+    color:#ddd6fe;
+
+}
+
+
+
+.hero h1 {
+
+    font-size:
+
+        clamp(2rem,5vw,3.5rem);
+
+
+    margin-bottom:15px;
+
+}
+
+
+
+.hero p {
+
+    max-width:650px;
+
+
+    margin:auto;
+
+
+    color:var(--muted);
+
+
+    line-height:1.7;
+
+}
+
+
+
+@keyframes fadeIn {
+
+
+    from {
+
+
+        opacity:0;
+
+
+        transform:
+
+            translateY(30px);
+
+
+    }
+
+
+
+    to {
+
+
+        opacity:1;
+
+
+        transform:
+
+            translateY(0);
+
+
+    }
+
+
+}
+
+
+
+/* ==========================
+   Feature Grid
+========================== */
+
+.feature-grid {
+
+    display:grid;
+
+
+    grid-template-columns:
+
+        repeat(auto-fit,minmax(240px,1fr));
+
+
+    gap:30px;
+
+}
+
+
+
+/* ==========================
+   Feature Card
+========================== */
+
+.feature-card {
+
+    position:relative;
+
+
+    min-height:300px;
+
+
+    overflow:hidden;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    padding:35px;
+
+
+    text-align:center;
+
+
+    border-radius:var(--radius);
+
+
+    background:
+
+        var(--surface);
+
+
+    border:
+
+        1px solid var(--border);
+
+
+    backdrop-filter:
+
+        blur(15px);
+
+
+    transition:
+
+        transform .45s ease,
+
+        box-shadow .45s ease;
+
+}
+
+/* ==========================
+   Card Content
+========================== */
+
+
+.content {
+
+    position:relative;
+
+
+    z-index:2;
+
+}
+
+
+
+.icon {
+
+    width:85px;
+
+
+    height:85px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    margin:0 auto 20px;
+
+
+    font-size:2.8rem;
+
+
+    border-radius:30%;
+
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            var(--primary),
+
+            var(--secondary)
+
+        );
+
+
+    transition:
+
+        transform .45s ease,
+
+        border-radius .45s ease;
+
+}
+
+
+
+.feature-card h2 {
+
+
+    font-size:1.5rem;
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+.feature-card p {
+
+
+    color:var(--muted);
+
+
+    line-height:1.7;
+
+
+}
+
+
+
+/* ==========================
+   Morph Glow Effect
+========================== */
+
+
+.glow {
+
+    position:absolute;
+
+
+    width:180px;
+
+
+    height:180px;
+
+
+    border-radius:50%;
+
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            var(--primary),
+
+            var(--accent)
+
+        );
+
+
+    filter:
+
+        blur(45px);
+
+
+    opacity:.25;
+
+
+    animation:
+
+        morphGlow 5s infinite;
+
+
+}
+
+
+
+@keyframes morphGlow {
+
+
+    0% {
+
+
+        transform:
+
+            scale(.8)
+
+            rotate(0deg);
+
+
+        border-radius:50%;
+
+
+    }
+
+
+
+    50% {
+
+
+        transform:
+
+            scale(1.4)
+
+            rotate(180deg);
+
+
+        border-radius:35%;
+
+
+    }
+
+
+
+    100% {
+
+
+        transform:
+
+            scale(.8)
+
+            rotate(360deg);
+
+
+        border-radius:50%;
+
+
+    }
+
+
+}
+
+
+
+/* ==========================
+   Hover Interaction
+========================== */
+
+
+.feature-card:hover {
+
+
+    transform:
+
+        translateY(-12px);
+
+
+    box-shadow:
+
+
+        0 25px 55px rgba(0,0,0,.35);
+
+
+}
+
+
+
+.feature-card:hover .icon {
+
+
+    transform:
+
+        rotate(15deg)
+
+        scale(1.15);
+
+
+    border-radius:50%;
+
+
+}
+
+
+
+.feature-card:hover .glow {
+
+
+    opacity:.45;
+
+
+}
+
+
+
+/* ==========================
+   Responsive Design
+========================== */
+
+
+@media(max-width:700px){
+
+
+    body {
+
+
+        padding:25px 15px;
+
+
+    }
+
+
+
+    .feature-grid {
+
+
+        grid-template-columns:
+
+            1fr;
+
+
+    }
+
+
+
+    .feature-card {
+
+
+        min-height:280px;
+
+
+        padding:28px;
+
+
+    }
+
+
+
+    .hero h1 {
+
+
+        font-size:2rem;
+
+
+    }
+
+
+}
+
+
+
+/* ==========================
+   Reduced Motion Support
+========================== */
+
+
+@media(prefers-reduced-motion:reduce){
+
+
+    * {
+
+
+        animation:none !important;
+
+
+        transition:none !important;
+
+
+    }
+
+
+
+    .glow {
+
+
+        animation:none;
+
+
+    }
+
+
+
+    .feature-card:hover {
+
+
+        transform:none;
+
+
+    }
+
+
+
+    .feature-card:hover .icon {
+
+
+        transform:none;
+
+
+    }
+
+
+}
