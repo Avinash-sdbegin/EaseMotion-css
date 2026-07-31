@@ -1,0 +1,113 @@
+.neon-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 0 18px rgba(0,240,255,.45),
+0 0 40px rgba(255,45,209,.28),
+0 0 60px rgba(255,228,94,.15);
+
+}
+
+.neon-btn:hover .scan-line{
+
+left:140%;
+
+}
+
+.neon-btn:hover .pulse-circle{
+
+transform:scale(18);
+
+opacity:1;
+
+}
+
+.neon-btn:hover .btn-label{
+
+color:var(--cyan);
+
+letter-spacing:3px;
+
+text-shadow:
+0 0 10px rgba(0,240,255,.9),
+0 0 20px rgba(0,240,255,.6);
+
+}
+
+.neon-btn:active{
+
+transform:scale(.96);
+
+}
+
+.neon-btn:focus-visible{
+
+outline:3px solid var(--yellow);
+
+outline-offset:5px;
+
+}
+
+@keyframes borderShift{
+
+0%{
+background-position:0% 50%;
+}
+
+100%{
+background-position:300% 50%;
+}
+
+}
+
+@media(max-width:600px){
+
+.container{
+
+padding:24px;
+
+}
+
+.container h1{
+
+font-size:1.7rem;
+
+}
+
+.container p{
+
+font-size:.95rem;
+
+margin-bottom:28px;
+
+}
+
+.neon-btn{
+
+width:190px;
+height:56px;
+
+}
+
+.btn-label{
+
+font-size:.9rem;
+
+}
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+
+animation:none !important;
+
+transition:none !important;
+
+scroll-behavior:auto !important;
+
+}
+
+}
