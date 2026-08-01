@@ -1,0 +1,773 @@
+/* ===========================
+   Root Variables
+=========================== */
+
+:root {
+  --bg: #0b1020;
+  --primary: #6a5cff;
+  --secondary: #ff5fa2;
+  --accent: #44d9ff;
+
+  --text: #ffffff;
+  --muted: #c6d0e3;
+
+  --glass: rgba(255,255,255,.08);
+  --glass-border: rgba(255,255,255,.15);
+
+  --radius:24px;
+
+  --transition:.45s cubic-bezier(.4,0,.2,1);
+
+  --shadow:
+  0 20px 45px rgba(0,0,0,.35);
+
+  --glow:
+  0 0 25px rgba(106,92,255,.35);
+
+  --max-width:1250px;
+}
+
+/* ===========================
+ Reset
+=========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:"Poppins",sans-serif;
+
+background:var(--bg);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+position:relative;
+
+line-height:1.7;
+
+}
+
+/* ===========================
+ Animated Gradient
+=========================== */
+
+.gradient-bg{
+
+position:fixed;
+
+inset:0;
+
+background:
+
+linear-gradient(
+130deg,
+#6a5cff,
+#ff5fa2,
+#44d9ff,
+#6a5cff
+);
+
+background-size:400% 400%;
+
+animation:gradientMove 24s linear infinite;
+
+z-index:-4;
+
+}
+
+@keyframes gradientMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* ===========================
+ Blur Circles
+=========================== */
+
+.blur-circle{
+
+position:fixed;
+
+border-radius:50%;
+
+filter:blur(110px);
+
+opacity:.55;
+
+z-index:-3;
+
+}
+
+.circle-1{
+
+width:320px;
+height:320px;
+
+background:#6a5cff;
+
+top:-120px;
+left:-100px;
+
+}
+
+.circle-2{
+
+width:380px;
+height:380px;
+
+background:#ff5fa2;
+
+right:-120px;
+top:180px;
+
+}
+
+.circle-3{
+
+width:260px;
+height:260px;
+
+background:#44d9ff;
+
+bottom:-80px;
+left:35%;
+
+}
+
+/* ===========================
+ Hero
+=========================== */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:80px 20px;
+
+text-align:center;
+
+position:relative;
+
+}
+
+.hero-content{
+
+max-width:820px;
+
+}
+
+.hero-badge{
+
+display:inline-block;
+
+padding:10px 22px;
+
+border-radius:999px;
+
+background:rgba(255,255,255,.1);
+
+border:1px solid rgba(255,255,255,.18);
+
+backdrop-filter:blur(16px);
+
+margin-bottom:26px;
+
+font-size:.9rem;
+
+}
+
+.hero h1{
+
+font-size:clamp(3rem,7vw,6rem);
+
+font-weight:800;
+
+line-height:1.1;
+
+margin-bottom:22px;
+
+}
+
+.hero h1 span{
+
+display:block;
+
+background:
+
+linear-gradient(
+135deg,
+#ffffff,
+#44d9ff,
+#ff5fa2
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+font-size:1.08rem;
+
+color:var(--muted);
+
+margin-bottom:38px;
+
+}
+
+.hero-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:16px 34px;
+
+border-radius:999px;
+
+font-weight:600;
+
+color:white;
+
+text-decoration:none;
+
+background:
+
+linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+
+box-shadow:var(--shadow);
+
+transition:var(--transition);
+
+}
+
+.hero-btn:hover{
+
+transform:
+
+translateY(-4px)
+scale(1.05);
+
+box-shadow:
+
+0 22px 45px rgba(106,92,255,.45);
+
+}
+
+/* ===========================
+ Scroll Indicator
+=========================== */
+
+.scroll-indicator{
+
+position:absolute;
+
+bottom:40px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+}
+
+.scroll-indicator span{
+
+display:block;
+
+width:28px;
+
+height:52px;
+
+border-radius:40px;
+
+border:2px solid rgba(255,255,255,.5);
+
+position:relative;
+
+}
+
+.scroll-indicator span::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:8px;
+
+transform:translateX(-50%);
+
+width:6px;
+
+height:6px;
+
+border-radius:50%;
+
+background:white;
+
+animation:scrollDot 1.8s infinite;
+
+}
+
+@keyframes scrollDot{
+
+0%{
+opacity:1;
+top:8px;
+}
+
+100%{
+opacity:0;
+top:30px;
+}
+
+}
+
+/* ===========================
+ Portfolio Grid
+=========================== */
+
+.portfolio-grid{
+
+width:min(92%,var(--max-width));
+
+margin:120px auto;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+align-items:start;
+
+}
+
+/* ===========================
+ Cards
+=========================== */
+
+.portfolio-card{
+
+position:relative;
+
+overflow:hidden;
+
+background:var(--glass);
+
+border:1px solid var(--glass-border);
+
+backdrop-filter:blur(18px);
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow);
+
+transition:var(--transition);
+
+transform-style:preserve-3d;
+
+perspective:1200px;
+
+cursor:pointer;
+
+}
+
+.portfolio-card.tall{
+
+min-height:520px;
+
+}
+
+.portfolio-card.medium{
+
+min-height:430px;
+
+}
+
+.portfolio-card.short{
+
+min-height:360px;
+
+}
+
+.card-image{
+
+height:240px;
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.card-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.7s ease;
+
+display:block;
+
+}
+
+.card-content{
+
+padding:26px;
+
+}
+
+.badge{
+
+display:inline-block;
+
+padding:8px 16px;
+
+border-radius:999px;
+
+font-size:.75rem;
+
+font-weight:600;
+
+margin-bottom:18px;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(106,92,255,.25),
+rgba(68,217,255,.25)
+);
+
+border:1px solid rgba(255,255,255,.12);
+
+}
+
+.card-content h3{
+
+font-size:1.5rem;
+
+margin-bottom:14px;
+
+}
+
+.card-content p{
+
+color:var(--muted);
+
+margin-bottom:26px;
+
+}
+
+/*==============================
+ Card Button
+==============================*/
+
+.card-content button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 26px;
+border:none;
+border-radius:999px;
+cursor:pointer;
+font-family:inherit;
+font-size:.92rem;
+font-weight:600;
+color:#fff;
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+box-shadow:0 15px 35px rgba(106,92,255,.35);
+transition:var(--transition);
+}
+
+.card-content button:hover{
+transform:translateY(-3px) scale(1.05);
+box-shadow:
+0 20px 45px rgba(255,95,162,.35);
+}
+
+/*==============================
+ Hover Effects
+==============================*/
+
+.portfolio-card::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.12),
+transparent,
+rgba(68,217,255,.12)
+);
+opacity:0;
+transition:var(--transition);
+pointer-events:none;
+}
+
+.portfolio-card:hover{
+transform:
+translateY(-18px)
+rotateX(6deg)
+scale(1.03);
+border-color:rgba(255,255,255,.35);
+box-shadow:
+0 25px 55px rgba(0,0,0,.45),
+0 0 30px rgba(106,92,255,.25);
+}
+
+.portfolio-card:hover::before{
+opacity:1;
+}
+
+.portfolio-card:hover img{
+transform:scale(1.12);
+}
+
+.card-content{
+position:relative;
+z-index:2;
+}
+
+.portfolio-card:hover .card-content button{
+transform:
+translateY(-4px)
+scale(1.05);
+}
+
+/*==============================
+ Reveal Animation
+==============================*/
+
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:
+opacity .8s ease,
+transform .8s ease;
+}
+
+.reveal.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/*==============================
+ Floating Animation
+==============================*/
+
+.portfolio-card:nth-child(odd){
+animation:floatOne 6s ease-in-out infinite;
+}
+
+.portfolio-card:nth-child(even){
+animation:floatTwo 7s ease-in-out infinite;
+}
+
+@keyframes floatOne{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+}
+
+@keyframes floatTwo{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(10px);
+}
+
+}
+
+/*==============================
+ Glass Glow
+==============================*/
+
+.portfolio-card::after{
+
+content:"";
+
+position:absolute;
+
+width:180px;
+height:180px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+rgba(68,217,255,.22),
+transparent 70%
+);
+
+top:-60px;
+right:-60px;
+
+pointer-events:none;
+
+}
+
+/*==============================
+ Scrollbar
+==============================*/
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#10182c;
+}
+
+::-webkit-scrollbar-thumb{
+border-radius:20px;
+background:linear-gradient(
+180deg,
+var(--primary),
+var(--secondary)
+);
+}
+
+/*==============================
+ Responsive
+==============================*/
+
+@media (max-width:1100px){
+
+.portfolio-grid{
+grid-template-columns:
+repeat(2,minmax(280px,1fr));
+}
+
+.hero h1{
+font-size:4rem;
+}
+
+}
+
+@media (max-width:768px){
+
+.portfolio-grid{
+grid-template-columns:1fr;
+}
+
+.hero{
+padding:100px 20px;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+.card-image{
+height:220px;
+}
+
+.portfolio-card,
+.portfolio-card.tall,
+.portfolio-card.medium,
+.portfolio-card.short{
+min-height:auto;
+}
+
+}
+
+@media (max-width:480px){
+
+.hero h1{
+font-size:2.4rem;
+}
+
+.hero-btn{
+width:100%;
+}
+
+.card-content{
+padding:22px;
+}
+
+.card-content h3{
+font-size:1.3rem;
+}
+
+.card-content button{
+width:100%;
+}
+
+.scroll-indicator{
+display:none;
+}
+
+}
+
+/*==============================
+ Smooth GPU Rendering
+==============================*/
+
+.portfolio-card,
+.card-image img,
+.hero-btn,
+.card-content button{
+will-change:transform;
+backface-visibility:hidden;
+transform-style:preserve-3d;
+}
