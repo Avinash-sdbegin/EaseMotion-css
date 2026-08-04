@@ -1,6 +1,6 @@
 # CSS 3D-Flip Feature Grid for Fintech Dashboard Layouts
 
-A modern fintech dashboard feature grid component featuring smooth 3D flip card animations, glassmorphism styling, responsive behavior, and a pure CSS implementation.
+A modern fintech dashboard feature grid component featuring smooth 3D flip card animation, glassmorphism styling, responsive behavior, and a pure CSS implementation.
 
 Built completely with HTML and CSS without JavaScript or external dependencies.
 
@@ -10,7 +10,7 @@ Built completely with HTML and CSS without JavaScript or external dependencies.
 - 🔄 Smooth 3D flip card animation
 - ✨ CSS transform based rotation effect
 - 💎 Glassmorphism feature cards
-- 📊 Fintech dashboard inspired design
+- 📊 Fintech dashboard inspired interface
 - 🎨 Interactive hover experience
 - ⚡ Pure HTML and CSS implementation
 - 📱 Responsive across desktop, tablet, and mobile
@@ -43,19 +43,19 @@ css-3d-flip-feature-grid-fintech-dashboard-layouts/
 ```css
 :root {
 
-    --bg:#020617;
-    --primary:#38bdf8;
-    --secondary:#8b5cf6;
-    --accent:#22c55e;
-    --text:#f8fafc;
-    --muted:#94a3b8;
+    --bg: #020617;
+    --primary: #38bdf8;
+    --secondary: #8b5cf6;
+    --accent: #22c55e;
+    --text: #f8fafc;
+    --muted: #94a3b8;
 
 }
 ✨ Animation Details
 
 The feature cards use CSS 3D transforms:
 
-.feature-card:hover .card-inner {
+.card:hover .card-inner {
 
     transform:
 
@@ -63,13 +63,12 @@ The feature cards use CSS 3D transforms:
 
 }
 
-Animation includes:
+The animation includes:
 
 3D perspective rotation
 Backface visibility handling
-Smooth transform transitions
-Card entrance animation
-Hover elevation effect
+Smooth transform transition
+Entrance animation effect
 🛠 Technologies Used
 HTML5
 CSS3

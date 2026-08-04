@@ -7,12 +7,12 @@
 
 :root {
 
-    --bg:#020617;
-    --primary:#38bdf8;
-    --secondary:#8b5cf6;
-    --accent:#22c55e;
-    --text:#f8fafc;
-    --muted:#94a3b8;
+    --bg: #020617;
+    --primary: #38bdf8;
+    --secondary: #8b5cf6;
+    --accent: #22c55e;
+    --text: #f8fafc;
+    --muted: #94a3b8;
 
 }
 
@@ -49,7 +49,7 @@ body {
 
     width:90%;
 
-    max-width:1200px;
+    max-width:1100px;
 
     margin:auto;
 
@@ -129,11 +129,11 @@ h1 {
 
 
 
-/* Feature Grid */
+/* Grid */
 
-.feature-grid {
+.grid {
 
-    margin-top:60px;
+    margin-top:55px;
 
 
     display:grid;
@@ -150,7 +150,7 @@ h1 {
 
 
 
-.feature-card {
+.card {
 
     height:320px;
 
@@ -160,7 +160,7 @@ h1 {
 
     animation:
 
-    cardReveal .8s ease forwards;
+    cardEntrance .9s ease forwards;
 
 
     opacity:0;
@@ -169,21 +169,21 @@ h1 {
 
 
 
-.feature-card:nth-child(2){
+.card:nth-child(2){
 
     animation-delay:.15s;
 
 }
 
 
-.feature-card:nth-child(3){
+.card:nth-child(3){
 
     animation-delay:.3s;
 
 }
 
 
-.feature-card:nth-child(4){
+.card:nth-child(4){
 
     animation-delay:.45s;
 
@@ -193,13 +193,13 @@ h1 {
 
 .card-inner {
 
+    position:relative;
+
+
     width:100%;
 
 
     height:100%;
-
-
-    position:relative;
 
 
     transform-style:preserve-3d;
@@ -213,7 +213,7 @@ h1 {
 
 
 
-.feature-card:hover .card-inner {
+.card:hover .card-inner {
 
     transform:
 
@@ -223,19 +223,13 @@ h1 {
 
 
 
-.card-front,
-.card-back {
+.front,
+.back {
 
     position:absolute;
 
 
     inset:0;
-
-
-    padding:30px;
-
-
-    border-radius:28px;
 
 
     display:flex;
@@ -248,6 +242,12 @@ h1 {
 
 
     align-items:center;
+
+
+    padding:25px;
+
+
+    border-radius:25px;
 
 
     text-align:center;
@@ -272,7 +272,7 @@ h1 {
 
 
 
-.card-back {
+.back {
 
     transform:
 
@@ -281,12 +281,7 @@ h1 {
 
     background:
 
-    rgba(139,92,246,.18);
-
-
-    border-color:
-
-    rgba(139,92,246,.5);
+    rgba(56,189,248,.12);
 
 }
 
@@ -303,8 +298,8 @@ h1 {
 
 
 
-.card-front h2,
-.card-back h2 {
+.front h2,
+.back h2 {
 
     margin-bottom:15px;
 
@@ -312,8 +307,8 @@ h1 {
 
 
 
-.card-front p,
-.card-back p {
+.front p,
+.back p {
 
     color:var(--muted);
 
@@ -324,7 +319,7 @@ h1 {
 
 
 
-@keyframes cardReveal {
+@keyframes cardEntrance {
 
     from {
 
@@ -355,23 +350,11 @@ h1 {
 
 
 
-.feature-card:hover {
-
-    filter:
-
-    drop-shadow(
-        0 20px 30px rgba(56,189,248,.25)
-    );
-
-}
-
-
-
 /* Responsive */
 
-@media(max-width:1000px){
+@media(max-width:900px){
 
-    .feature-grid {
+    .grid {
 
         grid-template-columns:
 
@@ -385,7 +368,7 @@ h1 {
 
 @media(max-width:600px){
 
-    .feature-grid {
+    .grid {
 
         grid-template-columns:
 
@@ -394,7 +377,7 @@ h1 {
     }
 
 
-    .feature-card {
+    .card {
 
         height:280px;
 
