@@ -1,0 +1,203 @@
+:root{
+    --bg:#070b12;
+    --card:#111827;
+    --track:#1f2937;
+    --text:#ffffff;
+    --muted:#94a3b8;
+    --radius:14px;
+    --speed:2.2s;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    radial-gradient(circle at top,#11233c 0%,transparent 45%),
+    linear-gradient(135deg,#05070d,#0b1120);
+    color:var(--text);
+    font-family:Arial,Helvetica,sans-serif;
+    padding:40px 20px;
+}
+
+.container{
+    width:min(850px,100%);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:12px;
+    font-size:2.3rem;
+    letter-spacing:1px;
+}
+
+.subtitle{
+    text-align:center;
+    color:var(--muted);
+    margin-bottom:35px;
+    line-height:1.6;
+}
+
+.progress-card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:30px;
+}
+
+.progress-item{
+    margin-bottom:30px;
+}
+
+.progress-item:last-child{
+    margin-bottom:0;
+}
+
+.progress-info{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+    font-size:.95rem;
+    font-weight:600;
+}
+
+.glitch-progress{
+    position:relative;
+    height:18px;
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:var(--track);
+}
+
+.glitch-fill{
+    position:absolute;
+    left:0;
+    top:0;
+    width:var(--progress);
+    height:100%;
+    border-radius:inherit;
+    animation:
+        loading 2.5s ease,
+        flicker var(--speed) infinite;
+}
+
+.cyan .glitch-fill{
+    background:linear-gradient(90deg,#00d4ff,#00fff2);
+    box-shadow:0 0 18px #00f7ff;
+}
+
+.purple .glitch-fill{
+    background:linear-gradient(90deg,#7c3aed,#d946ef);
+    box-shadow:0 0 18px #c026d3;
+}
+
+.green .glitch-fill{
+    background:linear-gradient(90deg,#22c55e,#86efac);
+    box-shadow:0 0 18px #22c55e;
+}
+
+.orange .glitch-fill{
+    background:linear-gradient(90deg,#fb923c,#facc15);
+    box-shadow:0 0 18px #fb923c;
+}
+.glitch-fill::before,
+.glitch-fill::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:inherit;
+    opacity:.65;
+}
+
+.glitch-fill::before{
+    transform:translateX(-2px);
+    mix-blend-mode:screen;
+    animation:glitch-left .25s infinite alternate;
+}
+
+.glitch-fill::after{
+    transform:translateX(2px);
+    mix-blend-mode:screen;
+    animation:glitch-right .22s infinite alternate;
+}
+
+@keyframes loading{
+    from{
+        width:0;
+    }
+    to{
+        width:var(--progress);
+    }
+}
+
+@keyframes flicker{
+    0%,100%{
+        filter:brightness(1);
+    }
+    10%{
+        filter:brightness(1.7);
+    }
+    20%{
+        filter:brightness(.8);
+    }
+    35%{
+        filter:brightness(1.4);
+    }
+    50%{
+        filter:brightness(.95);
+    }
+    70%{
+        filter:brightness(1.6);
+    }
+}
+
+@keyframes glitch-left{
+    from{
+        clip-path:inset(0 0 60% 0);
+    }
+    to{
+        clip-path:inset(60% 0 0 0);
+    }
+}
+
+@keyframes glitch-right{
+    from{
+        clip-path:inset(30% 0 20% 0);
+    }
+    to{
+        clip-path:inset(10% 0 55% 0);
+    }
+}
+
+@media (max-width:640px){
+
+    h1{
+        font-size:1.8rem;
+    }
+
+    .progress-card{
+        padding:20px;
+    }
+
+    .progress-info{
+        font-size:.88rem;
+    }
+}
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none !important;
+        transition:none !important;
+    }
+}
