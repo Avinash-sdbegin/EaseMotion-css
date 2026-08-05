@@ -1,0 +1,171 @@
+:root{
+--bg:#08111f;
+--card:#121b2c;
+--primary:#2563eb;
+--secondary:#06b6d4;
+--text:#fff;
+--muted:#94a3b8;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:
+radial-gradient(circle at top,#1e3a8a 0%,transparent 40%),
+linear-gradient(135deg,#030712,#111827);
+color:var(--text);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:60px 20px;
+}
+
+.pricing{
+max-width:1200px;
+width:100%;
+text-align:center;
+}
+
+.pricing h1{
+font-size:2.8rem;
+margin-bottom:12px;
+}
+
+.subtitle{
+color:var(--muted);
+margin-bottom:55px;
+}
+
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+gap:30px;
+}
+
+.price-card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:22px;
+padding:38px 30px;
+opacity:0;
+transform:translateY(45px);
+animation:fadeUp .8s forwards;
+}
+
+.price-card:nth-child(2){
+animation-delay:.25s;
+}
+
+.price-card:nth-child(3){
+animation-delay:.5s;
+}
+
+.featured{
+border:2px solid var(--secondary);
+transform:translateY(-10px);
+}
+
+.badge{
+display:inline-block;
+padding:7px 16px;
+border-radius:30px;
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+margin-bottom:18px;
+font-size:.9rem;
+}
+
+.price-card h2{
+margin-bottom:8px;
+}
+
+.price-card h3{
+font-size:2.8rem;
+margin-bottom:22px;
+}
+
+.price-card h3 span{
+font-size:1rem;
+color:var(--muted);
+}
+
+.price-card ul{
+list-style:none;
+text-align:left;
+margin-bottom:28px;
+}
+
+.price-card li{
+padding:11px 0;
+border-bottom:1px solid rgba(255,255,255,.08);
+color:var(--muted);
+}
+
+.price-card a{
+display:inline-block;
+margin-top:10px;
+padding:14px 30px;
+border-radius:10px;
+text-decoration:none;
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+color:#fff;
+font-weight:bold;
+transition:.3s;
+}
+
+.price-card:hover{
+transform:translateY(-12px);
+box-shadow:0 18px 40px rgba(37,99,235,.3);
+}
+
+.price-card:hover a{
+transform:scale(1.05);
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(45px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@media(max-width:768px){
+
+.pricing h1{
+font-size:2.2rem;
+}
+
+.featured{
+transform:none;
+}
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+*,
+*::before,
+*::after{
+animation:none!important;
+transition:none!important;
+}
+
+.price-card{
+opacity:1;
+transform:none;
+}
+
+}
