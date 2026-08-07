@@ -1,0 +1,566 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#eef5ff;
+    --surface:#ffffff;
+    --primary:#5b5df0;
+    --secondary:#7d5cff;
+    --success:#1fc97a;
+    --warning:#ffb347;
+
+    --text:#1b2333;
+    --muted:#68758b;
+
+    --radius:20px;
+
+    --shadow:
+    0 20px 45px rgba(91,93,240,.15);
+
+    --transition:.45s cubic-bezier(.22,1,.36,1);
+
+}
+
+body{
+
+    font-family:Inter,Segoe UI,sans-serif;
+
+    background:
+    radial-gradient(circle at top left,#dce7ff,transparent 45%),
+    radial-gradient(circle at bottom right,#dffcff,transparent 45%),
+    var(--bg);
+
+    color:var(--text);
+
+    min-height:100vh;
+
+}
+
+.em-wrapper{
+
+    width:min(1180px,92%);
+
+    margin:auto;
+
+    padding:70px 0;
+
+}
+
+.heading{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:8px 20px;
+
+    border-radius:999px;
+
+    background:rgba(91,93,240,.12);
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.heading h1{
+
+    font-size:3rem;
+
+    margin-bottom:18px;
+
+}
+
+.heading p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+.dashboard{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(290px,1fr));
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.88);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    animation:
+    fadeCard .8s ease both;
+
+}
+
+.card:hover{
+
+    transform:
+    translateY(-8px);
+
+}
+
+.card-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.card-top h3{
+
+    font-size:1.15rem;
+
+}
+
+.card-top span{
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.progress{
+
+    width:100%;
+    height:14px;
+
+    background:#e7ebf5;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    margin-bottom:18px;
+
+    position:relative;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    width:0;
+
+    border-radius:999px;
+
+    opacity:0;
+
+    animation:
+    fillFade 1.5s ease forwards;
+
+}
+
+.revenue{
+
+    width:86%;
+
+    background:
+    linear-gradient(90deg,
+    #5b5df0,
+    #8f5cff);
+
+    animation-delay:.15s;
+
+}
+
+.users{
+
+    width:72%;
+
+    background:
+    linear-gradient(90deg,
+    #00c6ff,
+    #00e0a7);
+
+    animation-delay:.35s;
+
+}
+
+.project{
+
+    width:94%;
+
+    background:
+    linear-gradient(90deg,
+    #7d5cff,
+    #ff74c8);
+
+    animation-delay:.55s;
+
+}
+
+.server{
+
+    width:98%;
+
+    background:
+    linear-gradient(90deg,
+    #16c784,
+    #5be49b);
+
+    animation-delay:.75s;
+
+}
+
+.card p{
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+}
+
+.hero{
+
+    margin-top:70px;
+
+    background:rgba(255,255,255,.88);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:28px;
+
+    padding:60px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-150px;
+
+    background:
+    radial-gradient(circle,
+    rgba(91,93,240,.15),
+    transparent 65%);
+
+    animation:rotateGlow 16s linear infinite;
+
+}
+
+.hero>*{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:rgba(91,93,240,.12);
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.hero h2{
+
+    font-size:2.4rem;
+
+    margin-bottom:18px;
+
+}
+
+.hero p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+    color:var(--muted);
+
+}
+
+@keyframes fillFade{
+
+    0%{
+
+        width:0;
+        opacity:0;
+
+    }
+
+    40%{
+
+        opacity:.4;
+
+    }
+
+    100%{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes fadeCard{
+
+    from{
+
+        opacity:0;
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes rotateGlow{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+.progress-fill::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+    top:0;
+
+    width:22px;
+    height:100%;
+
+    background:rgba(255,255,255,.55);
+
+    filter:blur(3px);
+
+}
+
+.card:nth-child(2){
+
+    animation-delay:.15s;
+
+}
+
+.card:nth-child(3){
+
+    animation-delay:.3s;
+
+}
+
+.card:nth-child(4){
+
+    animation-delay:.45s;
+
+}
+
+.card:hover .progress-fill{
+
+    filter:brightness(1.08);
+
+}
+
+.card:hover .card-top span{
+
+    transform:scale(1.08);
+
+    transition:var(--transition);
+
+}
+
+.hero:hover{
+
+    transform:translateY(-6px);
+
+    transition:var(--transition);
+
+}
+
+@media (max-width:900px){
+
+    .heading h1{
+
+        font-size:2.4rem;
+
+    }
+
+    .dashboard{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero{
+
+        padding:45px 30px;
+
+    }
+
+    .hero h2{
+
+        font-size:2rem;
+
+    }
+
+}
+
+@media (max-width:640px){
+
+    .em-wrapper{
+
+        padding:50px 0;
+
+    }
+
+    .heading h1{
+
+        font-size:2rem;
+
+    }
+
+    .heading p{
+
+        font-size:.95rem;
+
+    }
+
+    .card{
+
+        padding:22px;
+
+    }
+
+    .card-top{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+
+    }
+
+    .progress{
+
+        height:12px;
+
+    }
+
+    .hero{
+
+        margin-top:50px;
+
+        padding:36px 24px;
+
+    }
+
+    .hero h2{
+
+        font-size:1.7rem;
+
+    }
+
+    .hero p{
+
+        font-size:.95rem;
+
+    }
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation:none!important;
+        transition:none!important;
+        scroll-behavior:auto!important;
+
+    }
+
+    .progress-fill,
+    .card,
+    .hero{
+
+        transform:none!important;
+
+    }
+
+}
