@@ -1,146 +1,86 @@
 # CSS Bounce-Pulse Navbar for Product Catalog Layouts
 
-## Overview
+A lightweight pure CSS animation component that adds a smooth bounce-pulse interaction effect to a product catalog navigation bar.
 
-The CSS Bounce-Pulse Navbar for Product Catalog Layouts is a modern animated navigation component built using pure HTML and CSS.
+## ✨ Features
 
-This component demonstrates a product catalog navbar with smooth bounce entrance animation, pulse effects, interactive hover states, and responsive design without using JavaScript.
+- Pure HTML & CSS implementation
+- Smooth bounce-pulse hover animations
+- Responsive navbar layout
+- Modern product catalog showcase design
+- No JavaScript or external libraries required
+- Accessible with `prefers-reduced-motion`
+- Lightweight and performance friendly
 
-It is developed for the EaseMotion CSS collection to showcase lightweight, reusable, and performant CSS animation patterns.
 
----
-
-## Features
-
-- Pure HTML and CSS implementation
-- Smooth bounce entrance animation
-- Pulse animation effect
-- Product catalog navigation layout
-- CSS-only hover interactions
-- Smooth transitions and keyframe animations
-- Responsive design for desktop, tablet, and mobile
-- CSS custom properties for easy customization
-- Accessible reduced motion support
-
----
-
-## Folder Structure
+## 📂 Files
 
 
 62277-bounce-pulse-navbar-product-catalog/
-
+│
 ├── demo.html
 ├── style.css
 └── README.md
 
 
----
 
-## Technologies Used
+## 🚀 Usage
 
-- HTML5
-- CSS3
-- CSS Animations
-- CSS Variables
-- Responsive Web Design
-
----
-
-## Usage
-
-1. Place this folder inside:
+1. Copy the folder into:
 
 
 submissions/examples/
 
 
-2. Open `demo.html` in any modern browser.
+2. Open `demo.html` in any browser.
 
-3. Customize CSS variables inside `style.css` to change colors, spacing, and animation behavior.
+3. Customize the navbar items and styling using CSS variables.
 
----
 
-## CSS Custom Properties
-
-The component uses CSS variables for easy customization.
+## 🎨 CSS Custom Properties
 
 ```css
 :root {
-    --bg-color: #08111f;
-    --nav-bg: rgba(255,255,255,0.08);
-    --border-color: rgba(255,255,255,0.18);
-    --text-color: #ffffff;
-    --accent-color: #38bdf8;
-    --accent-secondary: #a78bfa;
-    --radius: 22px;
+    --primary: #2563eb;
+    --secondary: #60a5fa;
+    --dark: #111827;
+    --white: #ffffff;
 }
-Customization Examples
+Variables
+Variable	Purpose
+--primary	Main accent color
+--secondary	Supporting animation color
+--dark	Text color
+--white	Background color
+🎞 Animation Details
+Bounce Entrance
 
-Change accent color:
+The navbar smoothly enters the page with a bounce movement.
 
---accent-color: #22c55e;
+Pulse Hover
 
-Change navbar radius:
+Navigation links and buttons scale slightly on hover to create an interactive bounce effect.
 
---radius: 30px;
-Animation Details
-Bounce Entrance Animation
+📱 Responsive Support
 
-The navbar uses CSS keyframes to create a smooth bounce effect.
-
-Animation includes:
-
-Fade in
-Vertical movement
-Bounce transition
-Smooth appearance
-Pulse Effect
-
-The logo uses a pulse animation that creates a subtle scaling effect for better visual engagement.
-
-Hover Effects
-
-Navigation items include:
-
-Scale transformation
-Color transition
-Background highlight
-Smooth movement
-Responsive Design
-
-The component is optimized for:
+The navbar adapts to:
 
 Desktop screens
 Tablets
 Mobile devices
+♿ Accessibility
 
-Responsive improvements include:
+The component supports reduced motion preferences:
 
-Flexible navigation layout
-Adaptive spacing
-Mobile-friendly alignment
-Accessibility
+@media(prefers-reduced-motion:reduce)
 
-The component supports users who prefer reduced motion.
+Users who disable animations will get a simplified experience.
 
-Using:
+🛠 Technologies
+HTML5
+CSS3
+Keyframe Animations
+CSS Transitions
+📜 License
 
-@media (prefers-reduced-motion: reduce)
-
-animations and transitions are minimized for a comfortable experience.
-
-Browser Support
-
-Compatible with:
-
-Google Chrome
-Microsoft Edge
-Mozilla Firefox
-Safari
-Contribution
-
-This component is created as part of the EaseMotion CSS open-source contribution collection under GSSoC-26.
-
-License
-
-This project follows the licensing guidelines of the EaseMotion CSS repository.
+Part of the EaseMotion CSS animation showcase collection.
