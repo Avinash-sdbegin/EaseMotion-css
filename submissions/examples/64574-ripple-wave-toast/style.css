@@ -1,0 +1,244 @@
+:root {
+    --bg: #070b16;
+    --card: #111827;
+    --primary: #22d3ee;
+    --success: #34d399;
+    --text: #ffffff;
+    --muted: #94a3b8;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg);
+    font-family: Arial, sans-serif;
+    color: var(--text);
+}
+
+
+.container {
+    text-align: center;
+    padding: 25px;
+}
+
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+
+.subtitle {
+    color: var(--muted);
+    margin-bottom: 35px;
+}
+
+
+.toast {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    width: 360px;
+
+    padding: 22px;
+
+    overflow: hidden;
+
+    background: var(--card);
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    animation: entrance .8s ease forwards;
+
+    box-shadow:
+    0 0 30px rgba(34,211,238,.15);
+}
+
+
+
+.icon {
+
+    width: 55px;
+    height: 55px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background: var(--success);
+
+    color:#052e16;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    z-index:2;
+
+}
+
+
+
+.content {
+
+    text-align:left;
+    z-index:2;
+
+}
+
+
+.content h2 {
+
+    font-size:20px;
+    margin-bottom:5px;
+
+}
+
+
+.content p {
+
+    color:var(--muted);
+    font-size:14px;
+
+}
+
+
+
+/* Ripple animation */
+
+.ripple {
+
+    position:absolute;
+
+    width:80px;
+    height:80px;
+
+    left:25px;
+    top:25px;
+
+    border-radius:50%;
+
+    background:rgba(34,211,238,.35);
+
+    animation:ripple-effect 3s infinite;
+
+}
+
+
+
+
+@keyframes ripple-effect {
+
+    0% {
+
+        transform:scale(0);
+
+        opacity:.8;
+
+    }
+
+
+    100% {
+
+        transform:scale(7);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+@keyframes entrance {
+
+    from {
+
+        opacity:0;
+
+        transform:
+        translateY(40px)
+        scale(.85);
+
+        filter:blur(10px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+        filter:blur(0);
+
+    }
+
+}
+
+
+
+
+.toast:hover {
+
+    transform:translateY(-8px);
+
+    transition:.4s ease;
+
+}
+
+
+
+
+@media(max-width:600px){
+
+    .toast {
+
+        width:90%;
+
+    }
+
+
+    h1 {
+
+        font-size:32px;
+
+    }
+
+}
+
+
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after {
+
+        animation:none !important;
+        transition:none !important;
+
+    }
+
+}
