@@ -1,0 +1,389 @@
+:root {
+    --background: #070b1c;
+    --glass: rgba(255,255,255,0.08);
+    --border: rgba(255,255,255,0.2);
+    --cyan: #00ffff;
+    --pink: #ff0055;
+    --white: #ffffff;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    radial-gradient(circle at top,#243b55,#070b1c);
+
+    font-family:
+    Arial, sans-serif;
+
+    color:var(--white);
+
+    overflow-x:hidden;
+}
+
+
+
+.wrapper {
+
+    width:min(1100px,90%);
+
+    text-align:center;
+
+}
+
+
+
+.hero {
+
+    margin-bottom:50px;
+
+}
+
+
+.glitch-title {
+
+    position:relative;
+
+    display:inline-block;
+
+    font-size:clamp(2rem,5vw,4rem);
+
+    letter-spacing:2px;
+
+    animation:flicker 3s infinite;
+
+}
+
+
+
+.glitch-title::before,
+.glitch-title::after {
+
+    content:attr(data-text);
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+
+}
+
+
+
+.glitch-title::before {
+
+    color:var(--pink);
+
+    animation:glitch-one 1.8s infinite;
+
+}
+
+
+
+.glitch-title::after {
+
+    color:var(--cyan);
+
+    animation:glitch-two 1.5s infinite;
+
+}
+
+
+
+
+.hero p {
+
+    margin-top:15px;
+
+    opacity:.75;
+
+}
+
+
+
+
+.feature-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+
+
+.feature-card {
+
+    position:relative;
+
+    padding:30px 20px;
+
+    border-radius:25px;
+
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(15px);
+
+
+    overflow:hidden;
+
+
+    transition:.4s ease;
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+
+
+.feature-card:nth-child(2){
+    animation-delay:1s;
+}
+
+
+.feature-card:nth-child(3){
+    animation-delay:2s;
+}
+
+
+.feature-card:nth-child(4){
+    animation-delay:3s;
+}
+
+
+
+
+
+.feature-card::before {
+
+    content:"";
+
+    position:absolute;
+
+    width:200%;
+    height:200%;
+
+    top:-50%;
+    left:-50%;
+
+
+    background:
+    linear-gradient(
+    120deg,
+    transparent,
+    rgba(0,255,255,.3),
+    transparent
+    );
+
+
+    transform:rotate(25deg);
+
+    animation:sweep 4s infinite;
+
+}
+
+
+
+.feature-card:hover {
+
+    transform:
+    translateY(-12px)
+    scale(1.05);
+
+
+    box-shadow:
+    0 0 30px rgba(0,255,255,.4);
+
+}
+
+
+
+
+.icon {
+
+    font-size:45px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+h2 {
+
+    margin-bottom:15px;
+
+}
+
+
+
+.feature-card p {
+
+    line-height:1.6;
+
+    opacity:.8;
+
+}
+
+
+
+/* Animations */
+
+
+@keyframes float {
+
+    0%,100% {
+        transform:translateY(0);
+    }
+
+    50% {
+        transform:translateY(-15px);
+    }
+
+}
+
+
+
+@keyframes flicker {
+
+    0%,100% {
+        opacity:1;
+    }
+
+    50% {
+        opacity:.7;
+    }
+
+}
+
+
+
+@keyframes glitch-one {
+
+    0% {
+        transform:translate(0);
+    }
+
+    20% {
+        transform:translate(-4px,2px);
+    }
+
+    40% {
+        transform:translate(4px,-2px);
+    }
+
+    60% {
+        transform:translate(-2px);
+    }
+
+    100% {
+        transform:translate(0);
+    }
+
+}
+
+
+
+@keyframes glitch-two {
+
+    0% {
+        transform:translate(0);
+    }
+
+    30% {
+        transform:translate(3px,-2px);
+    }
+
+    50% {
+        transform:translate(-3px,2px);
+    }
+
+    100% {
+        transform:translate(0);
+    }
+
+}
+
+
+
+
+@keyframes sweep {
+
+    0% {
+        transform:translateX(-100%) rotate(25deg);
+    }
+
+    50% {
+        transform:translateX(100%) rotate(25deg);
+    }
+
+    100% {
+        transform:translateX(100%) rotate(25deg);
+    }
+
+}
+
+
+
+
+
+@media(max-width:900px){
+
+    .feature-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+}
+
+
+
+@media(max-width:550px){
+
+    .feature-grid{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+}
+
+
+
+
+@media(prefers-reduced-motion:reduce){
+
+    * {
+
+        animation:none!important;
+
+        transition:none!important;
+
+    }
+
+}
