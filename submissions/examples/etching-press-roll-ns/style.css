@@ -1,0 +1,182 @@
+*{
+  box-sizing:border-box;
+}
+
+body{
+
+  min-height:100vh;
+  margin:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#18181b;
+  font-family:Arial,sans-serif;
+
+}
+
+
+.ease-etching-press-roll{
+
+  width:380px;
+
+}
+
+
+.press-panel{
+
+  background:#27272a;
+  color:white;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  border:1px solid #52525b;
+
+}
+
+
+.press-panel p{
+
+  color:#a1a1aa;
+  font-size:12px;
+
+}
+
+
+.press-machine{
+
+  position:relative;
+  height:260px;
+  margin-top:20px;
+  overflow:hidden;
+
+}
+
+
+.roller{
+
+  position:absolute;
+  top:50px;
+  left:50%;
+  transform:translateX(-50%);
+  width:180px;
+  height:45px;
+  background:#71717a;
+  border-radius:30px;
+  animation:etching_press_roll_motion 3s infinite ease-in-out;
+
+}
+
+
+.plate{
+
+  position:absolute;
+  bottom:45px;
+  left:50%;
+  transform:translateX(-50%);
+  width:220px;
+  height:70px;
+  background:#a16207;
+  border-radius:8px;
+
+}
+
+
+.plate span{
+
+  display:block;
+  width:80%;
+  height:5px;
+  margin:30px auto;
+  background:#facc15;
+
+}
+
+
+.handle{
+
+  position:absolute;
+  width:15px;
+  height:120px;
+  background:#94a3b8;
+  right:40px;
+  top:20px;
+  transform-origin:bottom;
+  animation:handle_move 3s infinite ease-in-out;
+
+}
+
+
+.indicator{
+
+  margin-top:10px;
+
+}
+
+
+.indicator span{
+
+  display:inline-block;
+  width:10px;
+  height:10px;
+  margin-right:8px;
+  background:#22c55e;
+  border-radius:50%;
+
+}
+
+
+
+@keyframes etching_press_roll_motion{
+
+  0%{
+
+    transform:translate(-50%,0);
+
+  }
+
+
+  50%{
+
+    transform:translate(-50%,120px);
+
+  }
+
+
+  100%{
+
+    transform:translate(-50%,0);
+
+  }
+
+}
+
+
+
+@keyframes handle_move{
+
+  0%,100%{
+
+    rotate:0deg;
+
+  }
+
+
+  50%{
+
+    rotate:45deg;
+
+  }
+
+}
+
+
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+
+animation-duration:.01ms!important;
+
+}
+
+}
