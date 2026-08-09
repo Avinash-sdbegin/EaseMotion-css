@@ -1,0 +1,201 @@
+*{
+  box-sizing:border-box;
+}
+
+
+body{
+
+  min-height:100vh;
+  margin:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#18181b;
+  font-family:Arial,sans-serif;
+
+}
+
+
+.ease-eggbeater-whisk-spin{
+
+  width:380px;
+
+}
+
+
+.mixer-panel{
+
+  background:#27272a;
+  color:white;
+  text-align:center;
+  padding:25px;
+  border-radius:20px;
+  border:1px solid #52525b;
+
+}
+
+
+.mixer-panel p{
+
+  color:#a1a1aa;
+  font-size:12px;
+
+}
+
+
+.eggbeater{
+
+  height:280px;
+  position:relative;
+  margin-top:20px;
+
+}
+
+
+.handle{
+
+  position:absolute;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  width:35px;
+  height:80px;
+  background:#94a3b8;
+  border-radius:15px;
+
+}
+
+
+.gear{
+
+  position:absolute;
+  top:85px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:#71717a;
+  border:6px dotted #e5e7eb;
+  animation:gear_spin 2s linear infinite;
+
+}
+
+
+.gear-one{
+
+  left:120px;
+
+}
+
+
+.gear-two{
+
+  right:120px;
+
+}
+
+
+.whisk{
+
+  position:absolute;
+  top:140px;
+  width:35px;
+  height:100px;
+  border:4px solid #d4d4d8;
+  border-radius:50%;
+  animation:eggbeater_whisk_spin_motion 2s linear infinite;
+
+}
+
+
+.whisk-left{
+
+  left:120px;
+
+}
+
+
+.whisk-right{
+
+  right:120px;
+
+}
+
+
+.whisk span{
+
+  position:absolute;
+  left:50%;
+  height:100%;
+  width:4px;
+  background:#d4d4d8;
+  transform:translateX(-50%);
+
+}
+
+
+
+.status{
+
+  margin-top:10px;
+
+}
+
+
+.status span{
+
+  display:inline-block;
+  width:10px;
+  height:10px;
+  background:#22c55e;
+  border-radius:50%;
+  margin-right:8px;
+
+}
+
+
+
+@keyframes eggbeater_whisk_spin_motion{
+
+  from{
+
+    transform:rotate(0deg);
+
+  }
+
+  to{
+
+    transform:rotate(360deg);
+
+  }
+
+}
+
+
+
+@keyframes gear_spin{
+
+  from{
+
+    rotate:0deg;
+
+  }
+
+  to{
+
+    rotate:360deg;
+
+  }
+
+}
+
+
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+
+animation-duration:.01ms!important;
+
+}
+
+}
