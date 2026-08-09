@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        linear-gradient(135deg, #111827, #1e293b);
+    color: white;
+}
+
+
+.container {
+    width: min(90%, 700px);
+    text-align: center;
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+
+.subtitle {
+    color: #cbd5e1;
+    margin-bottom: 40px;
+}
+
+
+.progress-card {
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+
+    padding: 35px;
+    border-radius: 20px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+
+.header {
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+
+.progress-track {
+
+    width: 100%;
+    height: 25px;
+
+    background: rgba(255,255,255,0.15);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.progress-fill {
+
+    width: 78%;
+    height: 100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #38bdf8,
+        #6366f1
+    );
+
+    transform: skewX(-18deg);
+
+    transform-origin: left;
+
+    animation:
+    fillProgress 2s ease forwards,
+    glowMove 2s infinite alternate;
+
+}
+
+
+@keyframes fillProgress {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width:78%;
+    }
+
+}
+
+
+@keyframes glowMove {
+
+    from {
+        filter: brightness(1);
+    }
+
+    to {
+        filter: brightness(1.4);
+    }
+
+}
+
+
+
+.stats {
+
+    margin-top:35px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+
+.stats div {
+
+    padding:20px;
+
+    background:
+    rgba(255,255,255,0.06);
+
+    border-radius:15px;
+
+}
+
+
+.stats h3 {
+
+    font-size:1.8rem;
+
+    margin-bottom:8px;
+
+}
+
+
+.stats p {
+
+    color:#cbd5e1;
+
+}
+
+
+
+@media(max-width:600px){
+
+    h1{
+        font-size:2rem;
+    }
+
+
+    .stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .progress-card{
+
+        padding:25px;
+
+    }
+
+}
+
+
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:0.01ms!important;
+        transition-duration:0.01ms!important;
+
+    }
+
+}
