@@ -1,0 +1,223 @@
+*{
+  box-sizing:border-box;
+}
+
+
+body{
+
+  min-height:100vh;
+  margin:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#020617;
+  font-family:Arial,sans-serif;
+
+}
+
+
+.northern-wrapper{
+
+  width:420px;
+
+}
+
+
+.aurora-card{
+
+  background:#0f172a;
+  color:white;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  overflow:hidden;
+  border:1px solid #334155;
+
+}
+
+
+.aurora-card p{
+
+  color:#94a3b8;
+
+}
+
+
+
+.aurora-sky{
+
+  height:260px;
+  margin-top:20px;
+  position:relative;
+  overflow:hidden;
+  background:
+  radial-gradient(circle at top,#172554,#020617);
+
+}
+
+
+
+.aurora{
+
+  position:absolute;
+  width:180%;
+  height:120px;
+  left:-40%;
+  border-radius:50%;
+  filter:blur(25px);
+  opacity:.75;
+  transform-origin:center;
+}
+
+
+
+.aurora-one{
+
+  top:20px;
+  background:linear-gradient(
+    90deg,
+    #22c55e,
+    #06b6d4,
+    #a3e635
+  );
+
+  animation:
+  northern_lights_flow_one 8s ease-in-out infinite alternate;
+
+}
+
+
+
+.aurora-two{
+
+  top:80px;
+  background:linear-gradient(
+    90deg,
+    #38bdf8,
+    #22c55e,
+    #14b8a6
+  );
+
+  animation:
+  northern_lights_flow_two 10s ease-in-out infinite alternate;
+
+}
+
+
+
+.aurora-three{
+
+  top:140px;
+  background:linear-gradient(
+    90deg,
+    #8b5cf6,
+    #06b6d4,
+    #10b981
+  );
+
+  animation:
+  northern_lights_flow_three 12s ease-in-out infinite alternate;
+
+}
+
+
+
+.stars{
+
+  position:absolute;
+  inset:0;
+
+  background-image:
+  radial-gradient(circle,#fff 1px,transparent 1px);
+
+  background-size:40px 40px;
+  opacity:.3;
+
+}
+
+
+
+.status{
+
+  margin-top:15px;
+
+}
+
+
+
+.status span{
+
+  display:inline-block;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#22c55e;
+  margin-right:8px;
+
+}
+
+
+
+@keyframes northern_lights_flow_one{
+
+  from{
+
+    transform:translateX(-30px) rotate(-4deg);
+
+  }
+
+  to{
+
+    transform:translateX(30px) rotate(4deg);
+
+  }
+
+}
+
+
+
+@keyframes northern_lights_flow_two{
+
+  from{
+
+    transform:translateX(40px) rotate(5deg);
+
+  }
+
+  to{
+
+    transform:translateX(-40px) rotate(-5deg);
+
+  }
+
+}
+
+
+
+@keyframes northern_lights_flow_three{
+
+  from{
+
+    transform:scaleY(.8) translateX(-20px);
+
+  }
+
+  to{
+
+    transform:scaleY(1.2) translateX(20px);
+
+  }
+
+}
+
+
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+
+animation-duration:.01ms!important;
+
+}
+
+}
