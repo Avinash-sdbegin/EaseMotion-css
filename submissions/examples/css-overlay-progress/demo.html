@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="CSS-only loading overlay with an animated radial progress indicator"
+    >
+    <title>CSS Overlay with Progress</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="demo-page">
+        <section class="demo-content" aria-labelledby="demo-title">
+            <span class="demo-badge">EaseMotion CSS</span>
+
+            <h1 id="demo-title">CSS Overlay with Progress</h1>
+
+            <p>
+                A pure CSS loading overlay with an animated radial
+                progress indicator.
+            </p>
+
+            <div class="demo-card">
+                <h2>Loading Content</h2>
+                <p>
+                    The overlay demonstrates how a loading state can
+                    be presented without JavaScript.
+                </p>
+
+                <button type="button" class="demo-button">
+                    Processing...
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- CSS-only loading overlay -->
+    <div
+        class="loading-overlay"
+        role="status"
+        aria-live="polite"
+        aria-label="Loading, 75 percent complete"
+    >
+        <div class="progress-container">
+
+            <div
+                class="radial-progress"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="75"
+                aria-label="Loading progress: 75 percent"
+            >
+                <div class="progress-inner">
+                    <span class="progress-value">75%</span>
+                    <span class="progress-label">Loading</span>
+                </div>
+            </div>
+
+            <p class="loading-text">Please wait...</p>
+        </div>
+    </div>
+
+</body>
+</html>
