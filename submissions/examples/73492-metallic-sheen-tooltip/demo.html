@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Metallic Sheen CSS tooltip and popover variations."
+  >
+
+  <title>Metallic Sheen Tooltip</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="page">
+    <section class="demo" aria-labelledby="title">
+
+      <header class="hero">
+        <div>
+          <span class="eyebrow">EASEMOTION CSS</span>
+
+          <h1 id="title">
+            Metallic Sheen Tooltip
+          </h1>
+
+          <p>
+            Pure CSS tooltips with a polished metallic surface,
+            smooth transitions, and accessible keyboard interaction.
+          </p>
+        </div>
+
+        <span class="issue-badge">
+          #73492
+        </span>
+      </header>
+
+
+      <section class="tooltip-grid" aria-label="Tooltip examples">
+
+        <article class="tooltip-card">
+          <span class="card-number">01</span>
+
+          <h2>Default Tooltip</h2>
+
+          <p>
+            Hover or focus the element below.
+          </p>
+
+          <div class="demo-area">
+            <button
+              class="metal-trigger tooltip-trigger"
+              type="button"
+              aria-describedby="tooltip-default"
+            >
+              Hover Me
+
+              <span
+                class="metal-tooltip"
+                id="tooltip-default"
+                role="tooltip"
+              >
+                Refined metallic finish
+              </span>
+            </button>
+          </div>
+        </article>
+
+
+        <article class="tooltip-card">
+          <span class="card-number">02</span>
+
+          <h2>Top Tooltip</h2>
+
+          <p>
+            A directional tooltip positioned above the trigger.
+          </p>
+
+          <div class="demo-area">
+            <button
+              class="metal-trigger tooltip-trigger tooltip-top"
+              type="button"
+              aria-describedby="tooltip-top"
+            >
+              Focus Me
+
+              <span
+                class="metal-tooltip"
+                id="tooltip-top"
+                role="tooltip"
+              >
+                Precision crafted feedback
+              </span>
+            </button>
+          </div>
+        </article>
+
+
+        <article class="tooltip-card">
+          <span class="card-number">03</span>
+
+          <h2>Interactive Popover</h2>
+
+          <p>
+            A compact metallic information panel using CSS only.
+          </p>
+
+          <div class="demo-area">
+            <details class="metal-popover">
+              <summary>
+                Show Details
+              </summary>
+
+              <div class="popover-content">
+                <span class="popover-label">
+                  MATERIAL
+                </span>
+
+                <strong>
+                  Brushed Alloy
+                </strong>
+
+                <p>
+                  A layered metallic surface treatment with subtle
+                  highlights and soft transitions.
+                </p>
+              </div>
+            </details>
+          </div>
+        </article>
+
+      </section>
+
+
+      <section
+        class="comparison"
+        aria-labelledby="comparison-title"
+      >
+        <div>
+          <span class="eyebrow">INTERACTION</span>
+
+          <h2 id="comparison-title">
+            Smooth by default. Clear on focus.
+          </h2>
+        </div>
+
+        <div class="comparison-grid">
+          <div>
+            <span>01</span>
+
+            <h3>Hover</h3>
+
+            <p>
+              Tooltip fades and slides into place with a short,
+              hardware-friendly transition.
+            </p>
+          </div>
+
+          <div>
+            <span>02</span>
+
+            <h3>Keyboard</h3>
+
+            <p>
+              Buttons remain focusable and expose visible focus
+              indicators for keyboard users.
+            </p>
+          </div>
+
+          <div>
+            <span>03</span>
+
+            <h3>Reduced Motion</h3>
+
+            <p>
+              Motion is minimized when the user's system preference
+              requests reduced animation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      <footer>
+        <span>PURE HTML + VANILLA CSS</span>
+        <span>METALLIC SHEEN</span>
+      </footer>
+
+    </section>
+  </main>
+</body>
+</html>
