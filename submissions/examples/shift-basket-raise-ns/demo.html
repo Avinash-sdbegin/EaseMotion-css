@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="CSS-only Shift Basket Raise animation example for EaseMotion CSS."
+  >
+  <title>Shift Basket Raise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="demo" aria-labelledby="title">
+      <div class="intro">
+        <p class="eyebrow">EaseMotion CSS · Issue #77686</p>
+        <h1 id="title">Shift Basket Raise</h1>
+        <p class="description">
+          A CSS-only motion study inspired by a shifting basket mechanism,
+          using staggered keyframes to create a smooth upward movement.
+        </p>
+      </div>
+
+      <div
+        class="ease-shift-basket-raise"
+        aria-label="Animated shift basket raise mechanism"
+      >
+        <div class="ease-shift-basket-raise__housing">
+          <div class="ease-shift-basket-raise__bezel">
+            <div class="ease-shift-basket-raise__face">
+              <div class="ease-shift-basket-raise__motion" aria-hidden="true">
+                <span class="ease-shift-basket-raise__a"></span>
+                <span class="ease-shift-basket-raise__b"></span>
+                <span class="ease-shift-basket-raise__c"></span>
+                <span class="ease-shift-basket-raise__d"></span>
+              </div>
+
+              <div class="ease-shift-basket-raise__basket">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="ease-shift-basket-raise__shaft"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        CSS keyframe animation active
+      </p>
+    </section>
+  </main>
+</body>
+</html>
