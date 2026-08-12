@@ -1,0 +1,745 @@
+:root {
+  color-scheme: dark;
+
+  --bg: #06080d;
+  --surface: #111722;
+  --surface-2: #18202c;
+
+  --text: #f5f7fb;
+  --muted: #97a1b1;
+
+  --metal-dark: #273140;
+  --metal: #64748b;
+  --metal-light: #cbd5e1;
+
+  --accent: #f59e0b;
+  --accent-bright: #fde68a;
+
+  --edge: rgba(255, 255, 255, 0.09);
+
+  --ease: cubic-bezier(0.22, 0.8, 0.24, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(245, 158, 11, 0.12),
+      transparent 28rem
+    ),
+    linear-gradient(
+      145deg,
+      #04060a,
+      var(--bg) 50%,
+      #0c1119
+    );
+}
+
+.page {
+  min-height: 100vh;
+
+  display: grid;
+  place-items: center;
+
+  padding: 2rem 1rem;
+}
+
+.demo {
+  width: min(100%, 900px);
+
+  padding: clamp(1.5rem, 5vw, 3rem);
+
+  text-align: center;
+
+  border: 1px solid var(--edge);
+  border-radius: 1.75rem;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    ),
+    rgba(17, 23, 34, 0.94);
+
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.45),
+    inset 0 1px rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(14px);
+}
+
+.intro {
+  width: min(100%, 650px);
+  margin-inline: auto;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+
+  color: var(--accent-bright);
+
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+
+  font-size: clamp(2.2rem, 6vw, 4.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.description {
+  margin: 1.25rem 0 0;
+
+  color: var(--muted);
+
+  line-height: 1.75;
+}
+
+/* Main component */
+
+.ease-lever-tumbler-gate {
+  position: relative;
+
+  width: min(100%, 560px);
+  min-height: 400px;
+
+  margin: 3rem auto 2rem;
+
+  display: grid;
+  place-items: center;
+}
+
+.ease-lever-tumbler-gate__housing {
+  position: relative;
+
+  width: min(100%, 470px);
+  aspect-ratio: 1 / 0.82;
+
+  padding: 1.25rem;
+
+  border-radius: 2rem;
+
+  background:
+    linear-gradient(
+      145deg,
+      #1e2938 0%,
+      var(--metal) 20%,
+      var(--metal-dark) 55%,
+      #101722 100%
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.4),
+    inset 0 2px rgba(255, 255, 255, 0.16),
+    inset 0 -2px rgba(0, 0, 0, 0.4);
+
+  transform: translateZ(0);
+}
+
+.ease-lever-tumbler-gate__bezel {
+  width: 100%;
+  height: 100%;
+
+  padding: 0.85rem;
+
+  border-radius: 1.5rem;
+
+  background:
+    linear-gradient(
+      145deg,
+      #090d14,
+      #3d4858 50%,
+      #0b111a
+    );
+
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.55);
+}
+
+.ease-lever-tumbler-gate__face {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: 1rem;
+
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(245, 158, 11, 0.11),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #0b1018,
+      #060b12
+    );
+
+  box-shadow:
+    inset 0 0 40px rgba(0, 0, 0, 0.55),
+    inset 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* Decorative inner guides */
+
+.ease-lever-tumbler-gate__face::before {
+  content: "";
+
+  position: absolute;
+  inset: 12% 18%;
+
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 1rem;
+
+  pointer-events: none;
+}
+
+.ease-lever-tumbler-gate__face::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 7%;
+  bottom: 7%;
+
+  width: 2px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(245, 158, 11, 0.18),
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+/* Central bolt */
+
+.ease-lever-tumbler-gate__bolt {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 18%;
+  aspect-ratio: 1;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #f8fafc,
+      var(--metal-light) 20%,
+      #64748b 55%,
+      #1e293b 100%
+    );
+
+  box-shadow:
+    0 0 0 6px rgba(203, 213, 225, 0.06),
+    0 0 18px rgba(245, 158, 11, 0.16),
+    inset 2px 2px rgba(255, 255, 255, 0.25),
+    inset -2px -2px rgba(0, 0, 0, 0.45);
+
+  z-index: 10;
+}
+
+.ease-lever-tumbler-gate__bolt-head {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 5%;
+  height: 1.5%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(18deg);
+
+  border-radius: 99px;
+
+  background: #1f2937;
+
+  z-index: 11;
+}
+
+/* Tumbler animation pieces */
+
+.ease-lever-tumbler-gate__motion {
+  position: absolute;
+  inset: 0;
+}
+
+.ease-lever-tumbler-gate__motion span {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--accent-bright);
+
+  box-shadow:
+    0 0 8px var(--accent),
+    0 0 18px rgba(245, 158, 11, 0.4);
+
+  animation:
+    tumbler-pulse
+    3.8s var(--ease)
+    infinite;
+
+  will-change: transform, opacity;
+}
+
+.ease-lever-tumbler-gate__a {
+  left: 31%;
+  top: 27%;
+  animation-delay: 0s;
+}
+
+.ease-lever-tumbler-gate__b {
+  left: 42%;
+  top: 22%;
+  animation-delay: 0.14s;
+}
+
+.ease-lever-tumbler-gate__c {
+  right: 42%;
+  top: 22%;
+  animation-delay: 0.28s;
+}
+
+.ease-lever-tumbler-gate__d {
+  right: 31%;
+  top: 27%;
+  animation-delay: 0.42s;
+}
+
+@keyframes tumbler-pulse {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: translateY(0) scale(0.65);
+  }
+
+  30% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(7rem) scale(1);
+  }
+
+  72% {
+    opacity: 0.5;
+  }
+}
+
+/* Lever pieces */
+
+.ease-lever-tumbler-gate__lever {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 30%;
+  height: 9px;
+
+  transform-origin: 2.5% 50%;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #e2e8f0,
+      #64748b 50%,
+      #334155
+    );
+
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.4),
+    inset 0 1px rgba(255, 255, 255, 0.3);
+
+  z-index: 6;
+
+  animation:
+    lever-align
+    3.8s var(--ease)
+    infinite;
+
+  will-change: transform;
+}
+
+.ease-lever-tumbler-gate__lever::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 50%;
+
+  width: 18px;
+  height: 18px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #f8fafc,
+      #94a3b8 45%,
+      #334155
+    );
+
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.45),
+    inset 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.ease-lever-tumbler-gate__lever span {
+  position: absolute;
+
+  right: -3px;
+  top: 50%;
+
+  width: 16px;
+  height: 16px;
+
+  transform: translateY(-50%);
+
+  border-radius: 4px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f8fafc,
+      #64748b
+    );
+
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+.lever-a {
+  animation-delay: 0s;
+}
+
+.lever-b {
+  animation-delay: 0.12s;
+}
+
+.lever-c {
+  animation-delay: 0.24s;
+}
+
+.lever-d {
+  animation-delay: 0.36s;
+}
+
+@keyframes lever-align {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform:
+      translate(-50%, -50%)
+      rotate(-28deg);
+  }
+
+  22% {
+    transform:
+      translate(-50%, -50%)
+      rotate(-17deg);
+  }
+
+  48%,
+  58% {
+    opacity: 1;
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  78% {
+    transform:
+      translate(-50%, -50%)
+      rotate(16deg);
+  }
+}
+
+/* Stagger different tumblers */
+
+.lever-b {
+  animation-name: lever-align-b;
+}
+
+.lever-c {
+  animation-name: lever-align-c;
+}
+
+.lever-d {
+  animation-name: lever-align-d;
+}
+
+@keyframes lever-align-b {
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      rotate(22deg);
+  }
+
+  24% {
+    transform:
+      translate(-50%, -50%)
+      rotate(11deg);
+  }
+
+  50%,
+  60% {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  80% {
+    transform:
+      translate(-50%, -50%)
+      rotate(-12deg);
+  }
+}
+
+@keyframes lever-align-c {
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      rotate(-22deg);
+  }
+
+  25% {
+    transform:
+      translate(-50%, -50%)
+      rotate(-10deg);
+  }
+
+  51%,
+  61% {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  81% {
+    transform:
+      translate(-50%, -50%)
+      rotate(13deg);
+  }
+}
+
+@keyframes lever-align-d {
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      rotate(27deg);
+  }
+
+  26% {
+    transform:
+      translate(-50%, -50%)
+      rotate(14deg);
+  }
+
+  52%,
+  62% {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  82% {
+    transform:
+      translate(-50%, -50%)
+      rotate(-15deg);
+  }
+}
+
+/* Gate */
+
+.ease-lever-tumbler-gate__gate {
+  position: absolute;
+
+  left: 50%;
+  bottom: 11%;
+
+  width: 40%;
+  height: 12px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f1f5f9,
+      #64748b 55%,
+      #263244
+    );
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.5),
+    inset 0 1px rgba(255, 255, 255, 0.3);
+
+  z-index: 8;
+}
+
+.ease-lever-tumbler-gate__gate span {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 55%;
+  height: 3px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 99px;
+
+  background: rgba(245, 158, 11, 0.45);
+
+  box-shadow:
+    0 0 12px rgba(245, 158, 11, 0.35);
+}
+
+/* Status */
+
+.status {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 0.55rem;
+
+  color: var(--muted);
+
+  font-size: 0.82rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 0 12px var(--accent);
+
+  animation:
+    status-pulse
+    1.5s
+    ease-in-out
+    infinite;
+}
+
+@keyframes status-pulse {
+  50% {
+    opacity: 0.4;
+    transform: scale(0.75);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 620px) {
+  .demo {
+    padding: 1.4rem;
+  }
+
+  .ease-lever-tumbler-gate {
+    min-height: 300px;
+    margin-top: 2.25rem;
+  }
+
+  .ease-lever-tumbler-gate__housing {
+    width: 100%;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .ease-lever-tumbler-gate__motion span,
+  .ease-lever-tumbler-gate__lever,
+  .status-dot {
+    animation: none;
+  }
+
+  .ease-lever-tumbler-gate__motion span {
+    opacity: 0.7;
+    transform: none;
+  }
+
+  .ease-lever-tumbler-gate__lever,
+  .lever-a,
+  .lever-b,
+  .lever-c,
+  .lever-d {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+}
