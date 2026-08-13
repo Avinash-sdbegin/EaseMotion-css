@@ -1,0 +1,578 @@
+/* =========================================
+   Interactive File Dropzone
+   Part 1: Tokens, Layout & Dropzone
+   ========================================= */
+
+:root {
+    --drop-bg: #f5f7fb;
+    --drop-surface: #ffffff;
+    --drop-surface-soft: #f8faff;
+
+    --drop-text: #182230;
+    --drop-muted: #697586;
+
+    --drop-primary: #635bff;
+    --drop-primary-dark: #5048dc;
+    --drop-primary-soft: rgba(99, 91, 255, 0.08);
+
+    --drop-border: #dfe4ec;
+    --drop-border-active: #635bff;
+
+    --drop-success: #159570;
+    --drop-success-soft: rgba(21, 149, 112, 0.09);
+
+    --drop-shadow:
+        0 20px 60px rgba(30, 42, 62, 0.08);
+
+    --drop-radius: 1.25rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+
+    color: var(--drop-text);
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(99, 91, 255, 0.08),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(21, 149, 112, 0.06),
+            transparent 25%
+        ),
+        var(--drop-bg);
+}
+
+button,
+input,
+label {
+    font: inherit;
+}
+
+.dropzone-page {
+    min-height: 100vh;
+
+    display: grid;
+    place-items: center;
+
+    padding: 4rem 1.5rem;
+}
+
+.dropzone-container {
+    width: min(100%, 760px);
+    padding: 2.25rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 1.75rem;
+
+    background:
+        rgba(255, 255, 255, 0.82);
+
+    box-shadow: var(--drop-shadow);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.dropzone-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.dropzone-eyebrow {
+    display: inline-flex;
+
+    padding: 0.4rem 0.7rem;
+
+    color: var(--drop-primary);
+
+    border: 1px solid rgba(99, 91, 255, 0.14);
+    border-radius: 999px;
+
+    background: var(--drop-primary-soft);
+
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.dropzone-header h1 {
+    margin: 1rem 0 0;
+
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+}
+
+.dropzone-header p {
+    max-width: 540px;
+    margin: 1rem auto 0;
+
+    color: var(--drop-muted);
+
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Dropzone */
+
+.file-dropzone {
+    position: relative;
+
+    display: block;
+
+    min-height: 330px;
+
+    padding: 2rem;
+
+    cursor: pointer;
+
+    border: 2px dashed var(--drop-border);
+    border-radius: var(--drop-radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--drop-surface),
+            var(--drop-surface-soft)
+        );
+
+    transition:
+        border-color 220ms ease,
+        background-color 220ms ease,
+        box-shadow 220ms ease,
+        transform 220ms ease;
+}
+
+.file-dropzone:hover {
+    border-color: rgba(99, 91, 255, 0.65);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            rgba(99, 91, 255, 0.035)
+        );
+
+    box-shadow:
+        0 14px 35px rgba(99, 91, 255, 0.08);
+
+    transform: translateY(-2px);
+}
+
+.file-dropzone__input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+
+    border: 0;
+}
+
+.file-dropzone:focus-within {
+    border-color: var(--drop-border-active);
+
+    outline: 3px solid rgba(99, 91, 255, 0.14);
+    outline-offset: 3px;
+}
+
+.file-dropzone__content {
+    min-height: 285px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.file-dropzone__icon {
+    display: grid;
+
+    width: 72px;
+    height: 72px;
+
+    margin-bottom: 1.25rem;
+
+    place-items: center;
+
+    color: var(--drop-primary);
+
+    border-radius: 1.15rem;
+
+    background: var(--drop-primary-soft);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(99, 91, 255, 0.06);
+
+    transition:
+        transform 220ms ease,
+        background-color 220ms ease;
+}
+
+.file-dropzone:hover .file-dropzone__icon {
+    background: rgba(99, 91, 255, 0.12);
+
+    transform:
+        translateY(-4px)
+        rotate(-2deg);
+}
+
+.file-dropzone__icon svg {
+    width: 38px;
+    height: 38px;
+}
+
+.file-dropzone__title {
+    font-size: 1.15rem;
+    font-weight: 750;
+    letter-spacing: -0.015em;
+}
+
+.file-dropzone__subtitle {
+    margin-top: 0.5rem;
+
+    color: var(--drop-muted);
+
+    font-size: 0.8rem;
+}
+
+.file-dropzone__button {
+    display: inline-flex;
+
+    margin-top: 0.75rem;
+    padding: 0.7rem 1.1rem;
+
+    color: #ffffff;
+
+    border-radius: 0.65rem;
+
+    background: var(--drop-primary);
+
+    box-shadow:
+        0 6px 16px rgba(99, 91, 255, 0.22);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    transition:
+        background-color 180ms ease,
+        box-shadow 180ms ease,
+        transform 180ms ease;
+}
+
+.file-dropzone:hover .file-dropzone__button {
+    background: var(--drop-primary-dark);
+
+    box-shadow:
+        0 8px 20px rgba(99, 91, 255, 0.28);
+
+    transform: translateY(-1px);
+}
+
+.file-dropzone__hint {
+    margin-top: 1rem;
+
+    color: var(--drop-muted);
+
+    font-size: 0.68rem;
+}
+
+/* =========================================
+   Part 2: Preview, States & Responsiveness
+   ========================================= */
+
+/* Upload Preview */
+
+.upload-preview {
+    margin-top: 1.5rem;
+
+    padding: 1rem;
+
+    border: 1px solid var(--drop-border);
+    border-radius: 1rem;
+
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.upload-preview__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 0.8rem;
+
+    color: var(--drop-muted);
+
+    font-size: 0.7rem;
+    font-weight: 750;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.upload-preview__count {
+    padding: 0.3rem 0.55rem;
+
+    color: var(--drop-primary);
+
+    border-radius: 999px;
+
+    background: var(--drop-primary-soft);
+
+    font-size: 0.62rem;
+}
+
+/* File */
+
+.file-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.9rem;
+
+    padding: 0.9rem;
+
+    border: 1px solid var(--drop-border);
+    border-radius: 0.8rem;
+
+    background: var(--drop-surface);
+
+    transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        transform 180ms ease;
+}
+
+.file-item:hover {
+    border-color: rgba(99, 91, 255, 0.28);
+
+    box-shadow:
+        0 8px 24px rgba(30, 42, 62, 0.06);
+
+    transform: translateY(-1px);
+}
+
+.file-item__type {
+    display: grid;
+
+    width: 42px;
+    height: 42px;
+
+    place-items: center;
+
+    color: var(--drop-primary);
+
+    border-radius: 0.65rem;
+
+    background: var(--drop-primary-soft);
+
+    font-size: 0.62rem;
+    font-weight: 850;
+}
+
+.file-item__details {
+    display: flex;
+    min-width: 0;
+
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.file-item__details strong {
+    overflow: hidden;
+
+    font-size: 0.8rem;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-item__details span {
+    color: var(--drop-muted);
+
+    font-size: 0.68rem;
+}
+
+.file-item__status {
+    padding: 0.35rem 0.6rem;
+
+    color: var(--drop-success);
+
+    border-radius: 999px;
+
+    background: var(--drop-success-soft);
+
+    font-size: 0.62rem;
+    font-weight: 750;
+}
+
+/* File selected state */
+
+.file-dropzone:has(.file-dropzone__input:valid) {
+    border-color: rgba(21, 149, 112, 0.4);
+}
+
+/* Footer */
+
+.dropzone-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+
+    margin-top: 1.5rem;
+}
+
+.dropzone-footer span {
+    padding: 0.4rem 0.65rem;
+
+    color: var(--drop-muted);
+
+    border: 1px solid var(--drop-border);
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+/* Tablet */
+
+@media (max-width: 700px) {
+    .dropzone-page {
+        padding: 2.5rem 1rem;
+    }
+
+    .dropzone-container {
+        padding: 1.5rem;
+        border-radius: 1.4rem;
+    }
+
+    .file-dropzone {
+        min-height: 300px;
+        padding: 1.5rem;
+    }
+
+    .file-dropzone__content {
+        min-height: 255px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+    .dropzone-page {
+        padding: 1rem 0.7rem;
+    }
+
+    .dropzone-container {
+        padding: 1rem;
+
+        border-radius: 1.15rem;
+    }
+
+    .dropzone-header {
+        margin-bottom: 1.35rem;
+    }
+
+    .dropzone-header h1 {
+        font-size: 2rem;
+    }
+
+    .dropzone-header p {
+        font-size: 0.8rem;
+    }
+
+    .file-dropzone {
+        min-height: 280px;
+
+        padding: 1rem;
+
+        border-radius: 1rem;
+    }
+
+    .file-dropzone__content {
+        min-height: 240px;
+    }
+
+    .file-dropzone__icon {
+        width: 62px;
+        height: 62px;
+    }
+
+    .file-dropzone__icon svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .file-dropzone__title {
+        font-size: 1rem;
+    }
+
+    .file-dropzone__hint {
+        max-width: 230px;
+        line-height: 1.5;
+    }
+
+    .upload-preview {
+        padding: 0.75rem;
+    }
+
+    .file-item {
+        grid-template-columns: auto 1fr;
+    }
+
+    .file-item__status {
+        grid-column: 2;
+        justify-self: start;
+    }
+
+    .dropzone-footer {
+        gap: 0.4rem;
+    }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

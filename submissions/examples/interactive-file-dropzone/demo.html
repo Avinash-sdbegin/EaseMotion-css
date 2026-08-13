@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        name="description"
+        content="Interactive SaaS-style file dropzone built with pure HTML and CSS"
+    >
+    <title>Interactive File Dropzone</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="dropzone-page">
+
+        <section
+            class="dropzone-container"
+            aria-labelledby="dropzone-title"
+        >
+
+            <header class="dropzone-header">
+                <span class="dropzone-eyebrow">
+                    FILE MANAGEMENT
+                </span>
+
+                <h1 id="dropzone-title">
+                    Upload your files
+                </h1>
+
+                <p>
+                    Drag and drop your files here, or browse your device
+                    to get started.
+                </p>
+            </header>
+
+            <label class="file-dropzone">
+
+                <input
+                    class="file-dropzone__input"
+                    type="file"
+                    multiple
+                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.zip"
+                >
+
+                <span class="file-dropzone__content">
+
+                    <span
+                        class="file-dropzone__icon"
+                        aria-hidden="true"
+                    >
+                        <svg
+                            viewBox="0 0 48 48"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M24 31V8"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                            />
+                            <path
+                                d="M15 17L24 8L33 17"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M9 30V36C9 38.2091 10.7909 40 13 40H35C37.2091 40 39 38.2091 39 36V30"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+                    </span>
+
+                    <span class="file-dropzone__title">
+                        Drop your files here
+                    </span>
+
+                    <span class="file-dropzone__subtitle">
+                        or
+                    </span>
+
+                    <span class="file-dropzone__button">
+                        Browse files
+                    </span>
+
+                    <span class="file-dropzone__hint">
+                        PDF, DOC, JPG, PNG or ZIP · Up to 10 MB
+                    </span>
+
+                </span>
+
+            </label>
+
+            <section
+                class="upload-preview"
+                aria-label="Selected file preview"
+            >
+
+                <div class="upload-preview__header">
+                    <span>
+                        Recent upload
+                    </span>
+
+                    <span class="upload-preview__count">
+                        1 file
+                    </span>
+                </div>
+
+                <article class="file-item">
+
+                    <span
+                        class="file-item__type"
+                        aria-hidden="true"
+                    >
+                        PDF
+                    </span>
+
+                    <span class="file-item__details">
+                        <strong>
+                            project-document.pdf
+                        </strong>
+
+                        <span>
+                            2.4 MB · Ready to upload
+                        </span>
+                    </span>
+
+                    <span class="file-item__status">
+                        Ready
+                    </span>
+
+                </article>
+
+            </section>
+
+            <footer class="dropzone-footer">
+                <span>SECURE UPLOAD</span>
+                <span>RESPONSIVE</span>
+                <span>CSS ONLY</span>
+            </footer>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
