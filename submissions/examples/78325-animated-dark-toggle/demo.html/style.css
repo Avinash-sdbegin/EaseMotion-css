@@ -1,0 +1,451 @@
+:root {
+  --page-bg: #eef1f6;
+  --surface: #eef1f6;
+
+  --text: #202532;
+  --muted: #727a89;
+
+  --track-light: #d9dee8;
+  --track-dark: #171b26;
+
+  --thumb-light: #ffffff;
+  --thumb-dark: #252b38;
+
+  --accent: #6874ff;
+
+  --shadow-light: rgba(255, 255, 255, 0.95);
+  --shadow-dark: rgba(168, 176, 191, 0.55);
+
+  --transition: 360ms cubic-bezier(0.22, 0.8, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: var(--text);
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(104, 116, 255, 0.1),
+      transparent 32%
+    ),
+    var(--page-bg);
+}
+
+/* Page */
+
+.page {
+  min-height: 100vh;
+
+  display: grid;
+  place-items: center;
+
+  padding: clamp(18px, 5vw, 70px);
+}
+
+.showcase {
+  width: min(100%, 760px);
+
+  padding: clamp(28px, 6vw, 60px);
+
+  border-radius: 32px;
+
+  background: var(--surface);
+
+  box-shadow:
+    18px 18px 40px var(--shadow-dark),
+    -18px -18px 40px var(--shadow-light);
+
+  text-align: center;
+}
+
+/* Header */
+
+.eyebrow {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: var(--muted);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.description {
+  max-width: 580px;
+
+  margin: 18px auto 38px;
+
+  color: var(--muted);
+
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+/* Toggle Card */
+
+.toggle-card {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding: 22px 24px;
+
+  border-radius: 22px;
+
+  background: var(--surface);
+
+  box-shadow:
+    inset 5px 5px 11px rgba(168, 176, 191, 0.28),
+    inset -5px -5px 11px rgba(255, 255, 255, 0.78);
+}
+
+/* Mode information */
+
+.mode-info {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  text-align: left;
+}
+
+.mode-info > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mode-info strong {
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+.mode-info > div > span {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.mode-icon {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+
+  color: var(--accent);
+
+  font-size: 1.15rem;
+
+  background: var(--surface);
+
+  box-shadow:
+    6px 6px 13px rgba(168, 176, 191, 0.5),
+    -6px -6px 13px rgba(255, 255, 255, 0.86);
+}
+
+/* Toggle */
+
+.toggle {
+  position: relative;
+
+  display: inline-flex;
+
+  flex: 0 0 auto;
+
+  cursor: pointer;
+}
+
+.toggle input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.track {
+  position: relative;
+
+  width: 112px;
+  height: 54px;
+
+  display: block;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: var(--track-light);
+
+  box-shadow:
+    inset 7px 7px 14px rgba(168, 176, 191, 0.55),
+    inset -7px -7px 14px rgba(255, 255, 255, 0.82);
+
+  transition:
+    background var(--transition),
+    box-shadow var(--transition);
+}
+
+/* Sun / Moon */
+
+.sun,
+.moon {
+  position: absolute;
+
+  top: 50%;
+
+  display: grid;
+  place-items: center;
+
+  width: 22px;
+  height: 22px;
+
+  font-size: 0.72rem;
+
+  transform: translateY(-50%);
+
+  transition:
+    opacity var(--transition),
+    transform var(--transition);
+}
+
+.sun {
+  left: 13px;
+
+  color: #8d98aa;
+
+  opacity: 1;
+}
+
+.moon {
+  right: 13px;
+
+  color: #b8c0ce;
+
+  opacity: 0.3;
+}
+
+/* Thumb */
+
+.thumb {
+  position: absolute;
+
+  top: 5px;
+  left: 5px;
+
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--thumb-light);
+
+  box-shadow:
+    5px 5px 10px rgba(153, 161, 175, 0.5),
+    -5px -5px 10px rgba(255, 255, 255, 0.95);
+
+  transition:
+    left var(--transition),
+    background var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+}
+
+.thumb-icon {
+  color: #8d98aa;
+
+  font-size: 0.9rem;
+
+  transition:
+    transform var(--transition),
+    color var(--transition);
+}
+
+/* Checked state */
+
+.toggle input:checked + .track {
+  background:
+    linear-gradient(
+      145deg,
+      #171b25,
+      #252c3a
+    );
+
+  box-shadow:
+    inset 7px 7px 14px rgba(0, 0, 0, 0.42),
+    inset -6px -6px 13px rgba(64, 73, 91, 0.42);
+}
+
+.toggle input:checked + .track .thumb {
+  left: 63px;
+
+  background: var(--thumb-dark);
+
+  box-shadow:
+    5px 5px 11px rgba(0, 0, 0, 0.48),
+    -4px -4px 10px rgba(78, 88, 108, 0.45);
+}
+
+.toggle input:checked + .track .thumb-icon {
+  color: #dce3ff;
+
+  transform: rotate(180deg);
+
+  text-shadow: 0 0 10px rgba(104, 116, 255, 0.65);
+}
+
+.toggle input:checked + .track .sun {
+  opacity: 0.25;
+
+  transform:
+    translateY(-50%)
+    scale(0.75);
+}
+
+.toggle input:checked + .track .moon {
+  color: #cfd6ff;
+
+  opacity: 1;
+
+  transform:
+    translateY(-50%)
+    scale(1);
+}
+
+/* Focus */
+
+.toggle input:focus-visible + .track {
+  outline: 3px solid rgba(104, 116, 255, 0.38);
+  outline-offset: 6px;
+}
+
+/* Hint */
+
+.hint {
+  margin-top: 22px;
+
+  color: var(--muted);
+
+  font-size: 0.72rem;
+}
+
+/* Tablet */
+
+@media (max-width: 620px) {
+  .showcase {
+    border-radius: 26px;
+  }
+
+  .toggle-card {
+    padding: 20px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+  .page {
+    padding: 14px;
+  }
+
+  .showcase {
+    padding: 28px 18px;
+
+    border-radius: 22px;
+  }
+
+  h1 {
+    font-size: clamp(1.9rem, 10vw, 2.7rem);
+  }
+
+  .description {
+    margin-bottom: 28px;
+
+    font-size: 0.82rem;
+  }
+
+  .toggle-card {
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 20px;
+
+    padding: 18px;
+  }
+
+  .toggle {
+    align-self: center;
+  }
+}
+
+/* Small mobile */
+
+@media (max-width: 360px) {
+  .track {
+    width: 100px;
+    height: 50px;
+  }
+
+  .thumb {
+    width: 40px;
+    height: 40px;
+  }
+
+  .toggle input:checked + .track .thumb {
+    left: 55px;
+  }
+
+  .mode-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
