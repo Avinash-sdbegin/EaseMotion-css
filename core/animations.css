@@ -1461,3 +1461,60 @@
   }
 }
 
+/* ==========================================================================
+   Floating Ghost Drift
+   ========================================================================== */
+
+/**
+ * Floating Ghost Drift
+ *
+ * A lightweight vertical drift animation for floating UI elements.
+ *
+ * Custom properties:
+ * --ease-duration: Animation duration.
+ * --ease-timing: Animation timing function.
+ *
+ * Example:
+ * <div class="ease-anim-floating-ghost-drift">
+ *   ...
+ * </div>
+ */
+
+@keyframes ease-floating-ghost-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.82;
+  }
+
+  50% {
+    transform: translate3d(0, -10px, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.82;
+  }
+}
+
+.ease-anim-floating-ghost-drift {
+  --ease-duration: 3.5s;
+  --ease-timing: ease-in-out;
+
+  animation:
+    ease-floating-ghost-drift
+    var(--ease-duration)
+    var(--ease-timing)
+    infinite;
+
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ease-anim-floating-ghost-drift {
+    animation: none;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    will-change: auto;
+  }
+}
