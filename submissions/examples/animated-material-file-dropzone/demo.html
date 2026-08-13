@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Animated Material Design file dropzone built with pure HTML and CSS"
+    >
+
+    <title>Animated Material File Dropzone</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="material-page">
+
+        <section
+            class="material-card"
+            aria-labelledby="upload-heading"
+        >
+
+            <header class="material-card__header">
+
+                <div class="material-card__icon" aria-hidden="true">
+                    <svg
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M24 31V9"
+                            stroke="currentColor"
+                            stroke-width="2.8"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M15 18L24 9L33 18"
+                            stroke="currentColor"
+                            stroke-width="2.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+
+                        <path
+                            d="M9 29V37C9 38.1046 9.89543 39 11 39H37C38.1046 39 39 38.1046 39 37V29"
+                            stroke="currentColor"
+                            stroke-width="2.8"
+                            stroke-linecap="round"
+                        />
+                    </svg>
+                </div>
+
+                <div>
+                    <h1 id="upload-heading">
+                        Upload your files
+                    </h1>
+
+                    <p>
+                        Add documents, images, or other assets to continue.
+                    </p>
+                </div>
+
+            </header>
+
+
+            <label class="material-dropzone">
+
+                <input
+                    class="material-dropzone__input"
+                    type="file"
+                    multiple
+                    accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.zip"
+                >
+
+                <span
+                    class="material-dropzone__ripple"
+                    aria-hidden="true"
+                ></span>
+
+                <span
+                    class="material-dropzone__upload-icon"
+                    aria-hidden="true"
+                >
+                    <svg
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M24 32V11"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M16 19L24 11L32 19"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                </span>
+
+                <span class="material-dropzone__title">
+                    Drag &amp; drop files here
+                </span>
+
+                <span class="material-dropzone__subtitle">
+                    or choose files from your device
+                </span>
+
+                <span class="material-dropzone__button">
+                    CHOOSE FILES
+                </span>
+
+                <span class="material-dropzone__hint">
+                    PDF, DOC, JPG, PNG or ZIP · Up to 10 MB
+                </span>
+
+            </label>
+
+
+            <div class="material-progress">
+
+                <div class="material-progress__top">
+                    <span>
+                        Upload ready
+                    </span>
+
+                    <span>
+                        100%
+                    </span>
+                </div>
+
+                <div
+                    class="material-progress__track"
+                    role="progressbar"
+                    aria-label="Upload readiness"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="100"
+                >
+                    <span class="material-progress__bar"></span>
+                </div>
+
+            </div>
+
+
+            <footer class="material-card__footer">
+
+                <span>
+                    Secure upload
+                </span>
+
+                <span>
+                    Multiple files
+                </span>
+
+                <span>
+                    10 MB maximum
+                </span>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
