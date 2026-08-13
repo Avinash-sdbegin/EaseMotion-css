@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        name="description"
+        content="Minimalist floating file dropzone built with pure HTML and CSS"
+    >
+    <title>Floating File Dropzone</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="floating-page">
+
+        <section
+            class="upload-panel"
+            aria-labelledby="upload-title"
+        >
+
+            <header class="upload-header">
+                <div class="upload-header__icon" aria-hidden="true">
+                    <svg
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M24 31V9"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                        />
+                        <path
+                            d="M15 18L24 9L33 18"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M10 31V36C10 38.7614 12.2386 41 15 41H33C35.7614 41 38 38.7614 38 36V31"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                        />
+                    </svg>
+                </div>
+
+                <div>
+                    <span class="upload-header__eyebrow">
+                        DOCUMENTS
+                    </span>
+
+                    <h1 id="upload-title">
+                        Upload a file
+                    </h1>
+                </div>
+            </header>
+
+            <label class="floating-dropzone">
+
+                <input
+                    class="floating-dropzone__input"
+                    type="file"
+                    multiple
+                    accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
+                >
+
+                <span class="floating-dropzone__inner">
+
+                    <span
+                        class="floating-dropzone__cloud"
+                        aria-hidden="true"
+                    >
+                        <svg
+                            viewBox="0 0 48 48"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M15 37H34C39.5228 37 44 32.5228 44 27C44 21.4772 39.5228 17 34 17C32.9317 17 31.8947 17.1675 30.9185 17.4797C28.8442 12.5057 23.939 9 18.2143 9C10.3628 9 4 15.3628 4 23.2143C4 23.6787 4.0223 24.1378 4.0661 24.5907C2.7601 26.1708 2 28.1979 2 30.4C2 34.0451 4.95492 37 8.6 37H15Z"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M24 21V31"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                            />
+                            <path
+                                d="M20 25L24 21L28 25"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </span>
+
+                    <span class="floating-dropzone__title">
+                        Drag & drop your files here
+                    </span>
+
+                    <span class="floating-dropzone__or">
+                        or
+                    </span>
+
+                    <span class="floating-dropzone__browse">
+                        Browse files
+                    </span>
+
+                    <span class="floating-dropzone__hint">
+                        PDF, DOC, JPG or PNG · Maximum 10 MB
+                    </span>
+
+                </span>
+
+            </label>
+
+            <div class="upload-info">
+                <span class="upload-info__indicator"></span>
+
+                <span>
+                    Your files are processed securely
+                </span>
+            </div>
+
+            <footer class="upload-footer">
+                <span>MAX 10 MB</span>
+                <span>MULTIPLE FILES</span>
+                <span>SECURE</span>
+            </footer>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
