@@ -1,0 +1,43 @@
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:1rem;
+  background:#eef2f7;
+  font-family:system-ui,sans-serif
+}
+
+main{
+  width:min(100%,700px);
+  text-align:center
+}
+
+.wrapper{
+  container-type:inline-size;
+  width:100%;
+  padding:1rem;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 12px 28px rgba(0,0,0,.08)
+}
+
+.card{
+  padding:2rem;
+  border-radius:12px;
+  background:#6366f1;
+  color:#fff
+}
+
+.card p{margin:.5rem 0 0}
+
+@container (max-width:500px){
+  .card{
+    padding:1rem;
+    text-align:left
+  }
+
+  .card h2{font-size:1.2rem}
+}
