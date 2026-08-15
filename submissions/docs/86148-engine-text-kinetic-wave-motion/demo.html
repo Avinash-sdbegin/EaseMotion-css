@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Kinetic Wave Motion</title>
+
+  <style>
+    :root {
+      --ease-text-kinetic-wave-duration: 2s;
+      --ease-text-kinetic-wave-timing: ease-in-out;
+      --ease-text-kinetic-wave-distance: 16px;
+      --ease-text-kinetic-wave-stagger: 100ms;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .text {
+      font-size: clamp(3rem, 10vw, 7rem);
+      font-weight: 800;
+    }
+
+    .ease-anim-text-kinetic-wave-motion {
+      display: inline-block;
+      animation:
+        ease-text-kinetic-wave-motion
+        var(--ease-text-kinetic-wave-duration)
+        var(--ease-text-kinetic-wave-timing)
+        infinite;
+      animation-delay: calc(
+        var(--ease-text-wave-index) *
+        var(--ease-text-kinetic-wave-stagger)
+      );
+      transform: translate3d(0, 0, 0);
+      will-change: transform, opacity;
+    }
+
+    @keyframes ease-text-kinetic-wave-motion {
+      0%, 100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translate3d(
+          0,
+          calc(var(--ease-text-kinetic-wave-distance) * -1),
+          0
+        );
+        opacity: 0.7;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ease-anim-text-kinetic-wave-motion {
+        animation: none;
+        transform: none;
+        opacity: 1;
+        will-change: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="text" aria-label="Kinetic Wave">
+    <span class="ease-anim-text-kinetic-wave-motion" style="--ease-text-wave-index: 0">K</span>
+    <span class="ease-anim-text-kinetic-wave-motion" style="--ease-text-wave-index: 1">i</span>
+    <span class="ease-anim-text-kinetic-wave-motion" style="--ease-text-wave-index: 2">n</span>
+    <span class="ease-anim-text-kinetic-wave-motion" style="--ease-text-wave-index: 3">e</span>
+    <span class="ease-anim-text-kinetic-wave-motion" style="--ease-text-wave-index: 4">t</span>
+    <span class="ease-anim-text-kinetic-wave-motion" style="--ease-text-wave-index: 5">i</span>
+    <span class="ease-anim-text-kinetic-wave-motion" style="--ease-text-wave-index: 6">c</span>
+    <span>&nbsp;</span>
+    <span class="ease-anim-text-kinetic-wave-motion" style="--ease-text-wave-index: 7">W</span>
+    <span class="ease-anim-text-kinetic-wave-motion" style="--ease-text-wave-index: 8">a</span>
+    <span class="ease-anim-text-kinetic-wave-motion" style="--ease-text-wave-index: 9">v</span>
+    <span class="ease-anim-text-kinetic-wave-motion" style="--ease-text-wave-index: 10">e</span>
+  </h1>
+</body>
+</html>
